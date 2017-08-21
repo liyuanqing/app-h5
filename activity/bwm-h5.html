@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = (24*clientWidth/750) + 'px';
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            //doc.addEventListener('DOMContentLoaded', recalc, false);
+            recalc();
+        })(document, window);
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color:#0966e5 ;
+        }
+        .box img{
+            width: 100%;
+            margin: 0 auto;
+        }
+        .main-wrap a{display: block;}
+        .main-wrap img { width: 100%; display: block; }
+        .box{position: relative;}
+        .box a{position: absolute;}
+        .box2{ height:7.5rem;}
+        .time{ font-family: HYQiHei FZS;font-size: 1.408rem;color: #ffffff;text-align: center;font-weight: 600;margin-top: 2.083rem;}
+        .box3{ margin-top: 2.083rem; }
+        .box3 a{width:10rem;height:2.833rem;left:1.75rem;top:15.416rem;}
+        .box4 a:nth-of-type(1){width:13.333rem;height:2.292rem;left:1.25rem;top:14.583rem;}
+        .box4 a:nth-of-type(2){width:13.333rem;height:2.292rem;left:16.667rem;top:14.583rem; }
+        .box5 a:nth-of-type(1){width:7.5rem;height:5.833rem;left:0.625rem;}
+        .box5 a:nth-of-type(2){width:7.5rem;height:5.833rem;left:8.125rem;}
+        .box5 a:nth-of-type(3){width:7.5rem;height:5.833rem;left:15.625rem; }
+        .box5 a:nth-of-type(4){width:7.5rem;height:5.833rem;left:23.125rem;}
+        .box5 a:nth-of-type(5){width:7.5rem;height:5.833rem;left:0.625rem;top: 5.833rem;}
+        .box5 a:nth-of-type(6){width:7.5rem;height:5.833rem;left:8.125rem;top: 5.833rem;}
+        .box5 a:nth-of-type(7){width:7.5rem;height:5.833rem;left:15.625rem;top: 5.833rem; }
+        .box5 a:nth-of-type(8){width:7.5rem;height:5.833rem;left:23.125rem;top: 5.833rem; }
+        .box5 a:nth-of-type(9){width:7.5rem;height:5.833rem;left:0.625rem;top: 11.666rem;}
+        .box5 a:nth-of-type(10){width:15rem;height:5.833rem;right:0.625rem;top: 11.666rem; }
+    </style>
+</head>
+<body>
+<div class="main-wrap">
+    <div class="box box1">
+        <img src="images/top1.gif" alt="">
+    </div>
+    <div class="box box2">
+        <div class="time">距离狂欢还有<br>08天23小时33分钟56秒<div>
+    </div>
+    <div class="box box3">
+        <a href="#"></a>
+        <img src="images/top2.gif" alt="">
+
+    </div>
+    <div class="box box4">
+        <a href="#"></a>
+        <a href="#"></a>
+        <img src="images/top3.gif" alt="">
+    </div>
+    <div class="box box5">
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <img src="images/top4.gif" alt="">
+    </div>
+</div>
+<!-- <script>
+    var h = $(window).height()>200 ? $(window).height() : 300;
+    $("img.lazy").lazyload({
+        threshold: h
+    });
+</script> -->
+</body>
+</html>
