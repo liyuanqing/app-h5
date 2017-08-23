@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.cityList {
+    dt {
+        line-height: rem(90);
+        font-size: rem(32);
+        text-indent: 1em;
+        background: #f8f8f8;
+        border-bottom: 1px solid #e8e8e8;
+        position:relative;
+        &:after {
+            @extend .after;
+            @extend .icon-bg;
+            position: absolute;
+            width: rem(40);
+            height: rem(40);
+            top: 50%;
+            right: rem(24);
+            margin-top: rem(-20);
+            background-position:100% 30%;
+            transform: rotate(0deg);
+        }
+    }
+    dd {
+        display: none;
+        line-height: rem(84);
+        font-size: rem(28);
+        text-indent: 2em;
+        background: #fff;
+        border-bottom: 1px solid #f2f2f2;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    .on {
+        dt:after { transform: rotate(180deg); }
+        dd {display: block;}
+    }
+}

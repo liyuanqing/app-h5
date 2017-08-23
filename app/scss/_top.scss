@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+$topHeight:rem(88);
+.top-height { height: $topHeight;}
+
+.top-bar {
+    @extend .top-height;
+    @extend .gradient;
+    line-height: $topHeight;
+    overflow: hidden;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    width: 100%;
+    a { color: $white;}
+    h1 {
+        padding-top: rem(6);
+        line-height: rem(82);
+        font-weight: normal;
+    }
+    .logo {
+        @extend .icon-bg;
+        width: rem(180);
+        height: rem(60);
+        margin: 0 auto;
+        padding: 0;
+        overflow: hidden;
+        top: rem(18);
+        text-indent: -999em;
+        background-size:367%;
+        background-position: 0 30%;
+    }
+}
+.top-warp {
+    position: relative;
+    @extend .top-height;
+    font-size: rem(36);
+    color: $white;
+    text-align: center;   
+}
+.top-bar-back {
+    position: absolute;
+    left: 0;
+    font-size: rem(34);
+    padding: rem(20) rem(16) rem(8);
+    line-height:rem(60);
+    &:before {
+        @extend .after;
+        @extend .icon-bg;
+        width: rem(40);
+        height: rem(40);
+        background-position: 30% 20%;
+        display: inline-block;
+        top: rem(6);
+    }
+}
+//上面用fixed时需要设置body:before高度
+body:before { @extend .top-height; @extend .gradient;}
+
+.ios-body {
+    .top-bar {
+        padding-top:20px
+    }
+    .ios-div {
+        width: 100%;
+        height: 20px;
+        display: block;
+        @extend .gradient;
+    }
+    .errorMessage { margin-top: 20px;}
+}
+
+

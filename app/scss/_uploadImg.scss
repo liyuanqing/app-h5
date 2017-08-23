@@ -1,0 +1,74 @@
+@charset "UTF-8";
+.uploader {
+    overflow: hidden;
+}
+.uploader-li {
+    float: left;
+    width: 21.2%;
+    overflow:visible; 
+}
+.uploader-height {
+    height: rem(158);
+}
+
+.container .uploader {
+    //隐藏上传按钮
+    .webuploader-element-invisible { display: none;}
+    
+    //上传按钮处
+    .filelist {
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+        li {
+            @extend .uploader-li;
+            @extend .uploader-height;
+            margin-left: 3%;
+            margin-right: 0%;
+            .imgWrap {
+                width: 100%;
+                @extend .uploader-height;
+                overflow: hidden;
+            }
+        }
+        div.file-panel {
+            overflow: visible;
+            background:none;
+            .cancel,.cancel:hover {
+                position: absolute;
+                top:rem(-11);
+                left:rem(-11);
+                @extend .icon-bg;
+                width: rem(38);
+                height: rem(38);
+                background-position: 80% 30%;
+                margin: 0;
+            }
+        }
+    }
+    .btnWrap {
+        @extend .uploader-li;
+        @extend .uploader-height;
+        //设置背景
+        .btns {
+            border: 0;
+            .uploadBtn { display: none;}
+        }
+        .webuploader-pick {
+            background: #e8e8e8;
+            width: 100%;
+            @extend .uploader-height;
+            margin: 0; padding: 0; border: 0;
+            &:before {
+                @extend .after;
+                @extend .icon-bg;
+                width: rem(120);
+                height: rem(120);
+                margin: rem(18) auto 0;
+                background-size: 550%;
+                background-position: 100% 0;
+            }
+        }
+        .webuploader-pick-hover { background-color: #e8e8e8;}
+    }
+}

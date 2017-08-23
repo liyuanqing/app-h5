@@ -1,0 +1,17 @@
+.container{background-color: #E8EAEC;overflow: hidden;color: #333;}
+.bk1,.bk2{margin-top: 20px;margin-top: 0.625rem;width:100%;background-color: #fff;padding:20px 0 0 20px;padding:0.625rem 0 0 0.625rem;}
+
+.titleWrap{padding-bottom: 5px;padding-bottom: 0.15625rem;border-bottom: 1px solid #D2D2D2;margin-bottom: 20px;margin-bottom: 0.625rem;}
+.myTitle{width:100%;height:36px;height:1.125rem;line-height:0.9375rem;font-size: 28px;font-size: 0.875rem;
+         border-left: 3px solid #3297fd;text-indent: 10px;text-indent: 0.3125rem;font-weight: bold;}
+
+.conText{width:93.75%;font-size: 26px;font-size: 0.8125rem;line-height: 40px;line-height: 1.25rem;text-align: justify;padding-bottom: 24px;padding-bottom: 0.75rem;}
+.bk1 .con1{margin-bottom: 16px;margin-bottom:0.5rem;}
+
+.bk2{margin-top: 20px;margin-top: 0.625rem;}
+.bk2 .conText{width:100%;}
+.bk2 .conText li{width: 100%;height:36px;height:1.125rem;}
+.bk2 .listL{width:21.5%;float: left;}
+.bk2 .listR{width:71.5%;float: right;margin-right: 40px;margin-right:1.25rem;}
+.bk2 .conText li.special{height:78px;height:2.4375rem;}
+.bk2 li.data{padding-left: 138px;padding-left:4.3125rem; }

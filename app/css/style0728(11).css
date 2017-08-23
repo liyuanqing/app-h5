@@ -1,0 +1,256 @@
+html { -webkit-text-size-adjust: none; color: #333; height: 100%;}
+html, body, input { font-family: "微软雅黑","宋体","Helvetica Neue",Helvetica,Arial,sans-serif,"Arial Narrow",HELVETICA;}
+html, body, div, form, span, input, button, label, dl, dt, dd, ul, li, ol, p, h1, h2, h3, h4, h5, h6 { margin:0px; padding:0px; }
+body { height: 100%; }
+.container { margin: 0 auto; max-width: 640px; background-color: #fff; min-height: 100%;}
+ul, li, ol { list-style: none;}
+em, i, address { font-style: normal;}
+.clearfix { zoom: 1; display: block}
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+img { border: none; vertical-align: middle; max-width: 100%;}
+.fl { float: left; display: inline;} 
+.fr{ float: right; display: inline;}
+.fontGray{color:#a5a5a5;}/*灰色*/
+.fontBlue{color:#0085ec;}/*蓝色*/
+.fontGreen{color:#34c400;}/*绿色*/
+.fontOran{color:#fa5c5b;}/*橙色*/
+.fontPink{ color:#fa5c5b;}/*粉色*/
+.fontC3{ color: #333;}
+
+/* 0727新增图标字体样式一行 */
+@font-face { font-family: "icons"; src: url("../css/icons.ttf") format("truetype"); }
+
+/*文字和链接*/
+* { outline: 0; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+a:-webkit-any-link { color: #333; text-decoration: none; cursor: auto; }
+a { color:#333; text-decoration:none; outline:none;cursor: auto; border:none}/*默认*/
+/*边框*/
+.br { border-right: 1px solid #dcdcdc;}
+.disNone { display:none;}
+.top .back i, .list2 .status .icon { background: url(../img/publicIcon.png) no-repeat;}
+
+/*公共顶部*/
+.top { position: relative; /* line-height: 100px; line-height: 3.125rem; height: 3.125rem; */ line-height:88px; line-height:2.75rem; height:2.75rem; background-color: #3297fd; color: #fff; text-align: center; font-size: 30px; font-size: 0.9375rem; overflow:hidden; }
+.top span { display:inline-block; /* line-height:3.125rem; */ line-height:2.75rem; }
+.top .back { position: absolute; top: 0; left: 5%; color: #fff; font-size: 28px; font-size: 0.875rem;}
+.top .back i { float: left; display: inline; /* margin: 38% 10px 0 0; */ margin: 32.5% 10px 0 0;  margin-right: 0.3125rem; width: 20px; width: 0.625rem; height: 32px; height: 1rem; background-size: 3000%; background-position: 29% 0;}
+.top a.save, .top button.save, .top a.rightBtn{display:block;border:none;background-color:#3297fd;font-family:"微软雅黑";position: absolute; top:0; right: 5%; color: #fff; font-size: 28px; font-size: 0.875rem;}
+.top button.save, .top a.rightBtn{border:none; /* line-height: 3.125rem; */ line-height:2.75rem; }
+/*20161012替换样式--头部右侧放在文档流中*/
+/*.top a.save, .top button.save, .top a.rightBtn { float:right; position:static; padding-right:0.875rem; }*/
+
+
+.foot { position: fixed; bottom: 0; left: 0; width: 100%;}
+.foot .footNav { margin: 0 auto; max-width: 640px; background-color: #f2f2f2; border-top: 2px #e3e3e3 solid; text-align: center;}
+.foot .footNav a { display: inline-block; padding: 12px 0; padding: 0.375rem 0; width: 32%; font-size: 20px; font-size: 0.625rem;}
+.foot .footNav a i { display: block; margin: 0 auto; width: 38px; width: 1.1875rem; height: 50px; height: 1.5625rem; background: url(../img/foot.png) no-repeat; background-size: 100%;}
+.foot .footNav .footNav_pro { background-position: 0 26%; }
+.foot .footNav .footNav_my { background-position: 0 52%; }
+.foot .footNav .footNav_login { background-position: 0 79.5%; }
+.foot .footNav .actNav { color: #42cc67;}
+.foot .footNav .actNav i { background-position: 0 13%; }
+.foot .footNav .actNav .footNav_pro { background-position: 0 40%; }
+.foot .footNav .actNav .footNav_my { background-position: 0 66%; }
+.foot .footNav .actNav .footNav_login { background-position: 0 93%; }
+
+.bottom{position: fixed; bottom: 0; left: 0; width: 100%;}
+.bottom .bottomNav {margin: 0 auto; max-width: 640px;height:88px;height:2.75rem;background-color: #E3E3E3; border-top: 2px #dcdcdc solid; text-align: center;font-size: 0.5625rem;color: #666;}
+.bottom .bottomNav li{width:33.33%;height:88px;height:2.75rem;float: left;}
+.bottom .bottomNav .navIcon{width:42px;height:42px;width:1.3125rem;height:1.3125rem;margin:0.25rem auto 0.25rem;background: url("../img/publicIcon.png") center no-repeat;}
+.bottom .bottomNav .icon-borrow{background-position: 0 16% ;background-size: 1500%;}
+.bottom .bottomNav .icon-credit{background-position: 18% 24% ;background-size: 1580%;}
+.bottom .bottomNav .icon-user{background-position:29% 24%;background-size: 1600%;}
+.checkPage span{color: #3297fd;}
+.bottom .bottomNav .checkPage .icon-user{background-position: 22% 16%;background-size: 1600%;}
+.bottom .bottomNav .checkPage .icon-credit{background-position:11.5% 16.5%;background-size: 1580%;}
+.bottom .bottomNav .checkPage .icon-borrow{background-position: 0 8% ;background-size: 1500%;}
+
+/*错误提示信息 */
+.errorWrap,.errorMessage{width:100%; height:76px; height:2.375rem; line-height:2.375rem; color:#fff; position:fixed;top:3.125rem;left: 0;z-index: 2016; overflow:hidden; text-align: center;}
+.errorWrap .errorTextBg{width:100%;height:100%;background-color: #000;opacity: 0;text-align: center;z-index: 1992;position: absolute;top:0;left: 0;}
+.errorWrap .errorText{width:100%;height:100%;line-height:2.375rem;color:#fff;text-align: center;z-index: 2016;font-size: 28px;font-size: 0.875rem;position: absolute;top:0;left: 0;}
+.errorMessage{ height:auto; line-height:1.25rem; padding:0.5625rem 0; background-color:rgba(0,0,0,0.7);}
+
+@media only screen and (min-width: 640px)  {
+  html { font-size: 32px;}
+  .container , .footer ul{
+    margin: 0 auto; 
+    max-width: 640px;
+  }
+  body {background-color: #8cbc8b;}
+
+}
+
+@media only screen and (min-width: 620px) and (max-width: 640px) {
+  html { font-size: 32px;}
+}
+@media only screen and (min-width: 600px) and (max-width: 620px) {
+  html { font-size: 31px;}
+}
+
+
+@media only screen and (min-width: 580px) and (max-width: 600px) {
+  html { font-size: 30px;}
+}
+
+@media only screen and (min-width: 560px) and (max-width: 580px) {
+  html { font-size: 29px;}
+  
+}
+
+@media only screen and (min-width: 540px) and (max-width: 560px) {
+  html { font-size: 28px;}
+}
+
+@media only screen and (min-width: 520px) and (max-width: 540px) {
+  html { font-size: 27px;}
+}
+
+@media only screen and (min-width: 500px) and (max-width: 520px) {
+  html { font-size: 26px;}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 500px) {
+  html { font-size: 25px;}
+}
+
+@media only screen and (min-width: 460px) and (max-width: 480px) {
+  html { font-size: 24px;}
+}
+
+@media only screen and (min-width: 440px) and (max-width: 460px) {
+  html { font-size: 23px;}
+}
+
+@media only screen and (min-width: 430px) and (max-width: 440px) {
+  html { font-size: 22px;}
+}
+
+@media only screen and (min-width: 420px) and (max-width: 430px) {
+  html { font-size: 21.5px;}
+}
+
+@media only screen and (min-width: 410px) and (max-width: 420px) {
+  html { font-size: 21px;}
+}
+
+@media only screen and (min-width: 400px) and (max-width: 410px) {
+  html { font-size: 20.5px;}
+}
+
+@media only screen and (min-width: 380px) and (max-width: 400px) {
+  html { font-size: 20px;}
+}
+
+@media only screen and (min-width: 360px) and (max-width: 380px) {
+  html { font-size: 19px;}
+}
+
+@media only screen and (min-width: 340px) and (max-width: 360px) {
+  html { font-size: 18px;}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 340px) {
+  html { font-size: 17px;}
+}
+
+@media only screen and (min-width: 300px) and (max-width: 320px) {
+  html { font-size: 16px;}
+}
+
+@media only screen and (max-width: 300px) {
+  html { font-size: 15px;}
+}
+
+/*
+
+@media only screen and (min-width: 640px)  {
+  html { font-size: 24px;}
+  .container , .footer ul{
+    margin: 0 auto; 
+	  max-width: 640px;
+  }
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 640px) {
+  html { font-size: 24px;}
+}
+
+@media only screen and (min-width: 560px) and (max-width: 600px) {
+  html { font-size: 22.5px;}
+}
+
+@media only screen and (min-width: 540px) and (max-width: 560px) {
+  html { font-size: 21px;}
+}
+
+@media only screen and (min-width: 520px) and (max-width: 540px) {
+  html { font-size: 20.25px;}
+}
+
+@media only screen and (min-width: 500px) and (max-width: 520px) {
+  html { font-size: 19.5px;}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 500px) {
+  html { font-size: 18.75px;}
+}
+
+@media only screen and (min-width: 460px) and (max-width: 480px) {
+  html { font-size: 18px;}
+}
+
+@media only screen and (min-width: 440px) and (max-width: 460px) {
+  html { font-size: 17.25px;}
+}
+
+@media only screen and (min-width: 430px) and (max-width: 440px) {
+  html { font-size: 16.5px;}
+}
+
+@media only screen and (min-width: 420px) and (max-width: 430px) {
+  html { font-size: 16.125px;}
+}
+
+@media only screen and (min-width: 410px) and (max-width: 420px) {
+  html { font-size: 15.75px;}
+}
+
+@media only screen and (min-width: 400px) and (max-width: 410px) {
+  html { font-size: 15.375px;}
+}
+
+@media only screen and (min-width: 380px) and (max-width: 400px) {
+  html { font-size: 15px;}
+}
+
+@media only screen and (min-width: 360px) and (max-width: 380px) {
+  html { font-size: 14.25px;}
+}
+
+@media only screen and (min-width: 340px) and (max-width: 360px) {
+  html { font-size: 13.5px;}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 340px) {
+  html { font-size: 12.75px;}
+}
+
+@media only screen and (max-width: 320px) {
+  html { font-size: 12px;}
+}
+*/
+
+/* 20161012新增修改选择下拉时触发的范围区域(针对老的下拉选项触发范围较小的情况) */
+.container .selectArea { position:relative; overflow:hidden;}
+.container .selectArea span { position:absolute; top:0; left:0; z-index:1;}
+.container .selectArea select { position:relative; z-index:2; width:100%; text-indent:6.35rem; background: url(../img/publicIcon.png) center no-repeat;background-position: 10.35rem 68.5%;background-size: 100%; border:0; background-color:none; -webkit-appearance: none; -moz-appearance: none; -o-appearance: none; appearance: none;}
+
+/* 20160711新增-等待跳到下一页 */
+.delayTime { position:fixed; z-index:101; top:50%; left:50%; width:248px; height:198px; border-radius:20px; margin:-99px 0 0 -124px; width:7.75rem; height:6.1875rem; border-radius:0.625rem; margin:-3.09375rem 0 0 -3.875rem; background:#000; }
+.delayTime i { display:block; width:78px; height:78px; margin:60px auto 0; width:2.4375rem; height:2.4375rem; margin:1.875rem auto 0; background:url(../img/delayBg.png) 0 0 no-repeat; background-size:100%; text-indent:-999em; -webkit-animation:delayCir 1s infinite linear; animation:delayCir 1s infinite linear; }
+.delayTime em { position:fixed; display:block; width:100%; height:100%; top:0; left:0; background:url(../img/delayBg.png) -79px -79px no-repeat;}
+@-webkit-keyframes delayCir{0%{ -webkit-transform:rotate(0deg);}100%{ -webkit-transform:rotate(360deg);}}
+@keyframes delayCir{0%{ transform:rotate(0deg);}100%{ transform:rotate(360deg);}}
+

@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@import '_mixin.scss';
+
+.fl { float: left;}
+.container { background: #e8eaec; }
+
+.loanCon {
+    background: #fff;
+    overflow: hidden;
+    @include point(font-size,24);
+    color: #999;
+    .edu {
+        text-align: center;
+        @include point(padding-top,30);
+        @include point(height,135);
+        line-height: 1.5em;
+        b {
+            display: block;
+            @include point(font-size,52);
+            line-height: 1.4em;
+            color: $blue;
+        }
+    }
+}
+.em9 { width: 9.5em;}
+.em8 { width: 8.2em;}
+.em6 { width: 6em;}
+.em5 { width: 5.2em;}
+.loanInfo {
+    @include point(line-height,52);
+    @include box(padding,0,24);
+    overflow: hidden;
+    .em9 { float: right;}
+    b { font-weight: normal; color: #000;}
+    span { display: inline-block;}
+}
+.borrowUse {
+    @include box(padding,0,64,0,24);
+    @include point(height,76);
+    @include point(line-height,76);
+    border-top: 1px solid #e8e8e8;
+    @include point(margin-top,15);
+    position: relative;
+    span {
+        float: left;
+        @include point(font-size,28);
+        color: #000;
+    }
+    p {
+        text-align:right;
+        color: #666;
+    }
+    select {
+        width:100%;
+        background: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        opacity: 0;
+        @include point(height,76);
+        z-index: 3;
+    }
+    option {
+        color: #666;
+        opacity: 1;
+        @include point(font-size,24);
+        font-family: "microsoft yahei";
+    }
+    &:after {
+        display:block;
+        content:'';
+        background:url(../img/addIcon0913.png) no-repeat;
+        background-size:600%;
+        background-position:20% 40%;
+        width:1.75rem;
+        height:1.75rem;
+        margin-top:-0.875rem;
+        position:absolute;
+        top:50%;
+        right:0.625rem;
+    }
+}
+
+//滑动块
+.rangeDiv {
+    @include box(padding,12,24,0);
+    input[type=range] {
+        -webkit-appearance: none;
+        width: 100%;
+        @include point(height,12);
+        @include radius(7);
+        background: #e8e8e8;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        @include point(width,30);
+        @include point(height,30);
+        @include radius(16);
+        background:#3297fd;
+        box-shadow: 0px 0px 5px #3297fd;
+        border: none;
+    }
+    .now {
+        position: relative;
+        @include point(height,48);
+        @include point(line-height,38);
+        @include point(font-size,28);
+        color: #000;
+        span {
+            position:absolute;
+            left:0px;
+            top:0;
+            white-space: nowrap;
+        }
+    }
+    &.focus .now { @include point(font-size,36); }
+    .max,.min { @include point(line-height,52); }
+}
+//按钮
+.mySubmit{display:block;width:93.75%; text-align: center;color: #fff; font-family: "微软雅黑"; border:none; font-size:32px; font-size:1rem; line-height:72px; height:2.25rem; line-height:2.25rem; border-radius:0.3125rem; -webkit-border-radius:0.3125rem; margin:20px auto 0; margin:20px auto 0;}
+.mySubmit:-webkit-any-link { color: #fff;}
+.grayBg{background-color: #ccc;}
+.blueBg{background-color: #3297fd;}
+.mt0 { margin-top: 0;}
+
+//勾选是否**同意协议**
+.agreeMent {
+    display: block;
+    color: #666;
+    @include point(font-size,24);
+    @include point(line-height,40);
+    @include box(padding,15,24);
+    //默认勾选 
+    &:before {
+        content: '';
+        background: url(../img/addIcon0913.png) no-repeat;
+        background-size: 600%;
+        background-position: 60% 100%;
+        display: inline-block;
+        @include point(width,28);
+        @include point(height,28);
+        color: $blue;
+        @include point(margin-right,3);
+        position: relative;
+        @include point(top,3);
+    }
+    //未勾选图标
+    &.no:before {
+        background-position: 80% 100%;
+    }
+    input { width: 0; height: 0; border: 0; display: inline;}
+    a,.blue { color: $blue; text-decoration: underline;}
+}

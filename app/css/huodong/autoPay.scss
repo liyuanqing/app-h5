@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@import '../_mixin.scss';
+
+.allowBanner img { display:block; width:100%;}
+.contentDl {
+    @include box(padding,24,0,100);
+    dl {
+      @include box(padding,8,35,32); 
+      @include point(font-size,28); 
+      @include point(line-height,36); 
+      color: #666;
+      .orange { color: #f35b10;}
+      .pt10 { @include point(padding-top,10);}
+      dt {
+          font-weight: bold;
+          @extend .orange;
+          @include point(padding-bottom,12); 
+          .icon {
+              float: left;
+              @include point(width,36); 
+              @include point(height,36); 
+              text-align: center;
+              color: #fff;
+              @include point(border-radius,5); 
+              background: #f35b10;
+              @include point(font-size,22);
+              font-family: arial;
+              font-weight: normal; 
+              overflow: hidden;
+              white-space: nowrap;
+              @include point(margin-right,12); 
+          }
+      }
+    }
+}
+//覆盖头部样式
+.top { background: #f7b900;}

@@ -1,0 +1,1095 @@
+@charset "UTF-8";
+@import '_mixin.scss';
+
+@mixin iconEle {
+    display: block;
+    position: absolute;
+    content: '';
+    z-index: 2;
+}
+button { outline:none; border:0; -webkit-appearance: none; font-family: "microsoft yahei"; }
+$fontBack:#060927;
+.fontBack { color:$fontBack ;}
+.container { background: #e8eaec;}
+.bgFFF { background: #fff;}
+.blue { color: $blue;}
+.gray { color: #999;}
+.col9 { @extend .gray; }
+.reportIcons { background:url(../img/creditReportIcon.png) no-repeat; background-size: 600%; @include point(width,44); @include point(height,44); }
+.icon0913 { background: url(../img/addIcon0913.png) no-repeat; background-size: 600%;}
+.rightArrow {
+    @include iconEle;
+    @extend .reportIcons;
+    background-position: 0 20%;
+    @include point(right,10);
+    bottom: 50%;
+    @include point(margin-bottom,-22);
+}
+.blueBtn {
+    @include point(line-height,72);
+    @include point(font-size,32);
+    background: $blue;
+    display: block;
+    border-radius:rem(10);
+    width: 93.75%;
+    color: #fff;
+    &.reBtn {
+        text-align: center;
+        @include box(margin,25,auto,20);
+    }
+    &.mt0 { margin-top: 0;}
+    &.mt30 {
+        @include point(margin-top,30);
+    }
+    &.mt20 { @include point(margin-top,20); }
+    &.mt-20 {
+        @include point(margin-top,-20);
+        position: relative;
+        z-index: 3;
+    }
+    &.grayBtn {
+        background: #ccc;
+    }
+    &.greenBg {
+        background: #43b800;
+    }
+    &.light {
+        border: 1px solid #3399ff;
+        background:#e4effa;
+        &:-webkit-any-link { color: $blue;}
+    }
+    
+    &:-webkit-any-link { color: #fff;}
+    
+}
+
+.aBlockLink { display: block; position: relative; z-index: 3; }
+.txtEllipsis {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+//央行征信报告相关
+.creditReport {
+    @include point(padding-bottom,130);
+    //报告banner
+    .reportBanner {
+        @include point(height,176);
+        background: url(../img/creditReportBg.jpg) no-repeat;
+        background-size: 100% 100%;
+        text-align: right;
+        .look {
+           @include point(font-size,28); 
+           @include point(line-height,86); 
+           @include point(padding-right,10); 
+           text-align: right;
+           @include point(margin-top,90); 
+           display:inline-block;
+           color: #fff;
+           position: relative;
+           &:after{
+               @extend .reportIcons;
+               background-position: 0 20%;
+               content: '';
+               display: inline-block;
+               vertical-align: middle;
+               position: relative;
+               @include point(top,-2);
+           }
+           &.okIcon:before {
+               @include iconEle;
+               @extend .reportIcons;
+               background-position:20% 0;
+               @include point(left,-60);
+               @include point(bottom,20);
+           }
+           &.noOk:before {
+               display: none;
+           }
+        }
+        .noArrow {
+            @include point(padding-right,24); 
+            &:after {
+                display: none;
+            }
+        }
+    }
+    //历史报告列表-可通用
+    .reportList {
+        @include point(margin-top,18);
+        background: #fff;
+        border-bottom: 1px solid #e7e7e7;
+        //box-shadow:#e7e7e7 0px 2px 1px ;reportList
+        @include point(line-height,76);
+        font-family: 'arial', "microsoft yahei";
+        &,a { color: #666;}
+        a { display: block; height: 100%; position:relative; z-index: 3;}
+        dt {
+            border-left:rem(6) solid #3297fd ;
+            box-shadow:#ddd 0px 1px 0px ;
+            @include point(text-indent,18);
+            color: $fontBack;
+            @include point(font-size,28);
+            span {
+                color: #999;
+                float: right;
+                @include point(padding-right,24);
+                @include point(font-size,26);
+            }
+        }
+        dd {
+           @include point(margin-left,25);
+           border-bottom: 1px solid #f1f1f1; 
+           position: relative;
+           &:last-child { border-bottom:0;}
+           @include point(font-size,24);
+           .time { @include point(padding-right,58); }
+        }
+        &.reportGo dd:after {
+            @extend .rightArrow;;
+            @include point(right,10);
+        }
+    } 
+    //20161008新增覆盖样式-用于选择银行卡
+    .selectBank {
+        margin-top: 0;
+        dd {
+            @include point(font-size,28);
+            @include point(line-height,90);
+            a { color: #000;
+                &:before {
+                    content: '';
+                    float: left;
+                    @include point(width,64);
+                    @include point(height,64);
+                    @include box(margin,13,18,0,0);
+                    background: url(../img/bankIcon.png) no-repeat -100% -100%;
+                    background-size: 600%;
+                }
+            }
+            .bank10:before { background-position: 0 0;}
+            .bank20:before { background-position: 20% 0;}
+            .bank30:before { background-position: 40% 0;}
+            .bank40:before { background-position: 60% 0;}
+            .bank50:before { background-position: 80% 0;}
+            .bank60:before { background-position: 100% 0;}
+            .bank70:before { background-position: 0 25%;}
+            .bank80:before { background-position: 20% 25%;}
+            .bank90:before { background-position: 40% 25%;}
+            .bank100:before { background-position: 60% 25%;}
+            .bank110:before { background-position: 80% 25%;}
+            .bank120:before { background-position: 100% 25%;}
+            .bank130:before { background-position: 0 50%;}
+            .bank140:before { background-position: 20% 50%;}
+            .bank150:before { background-position: 40% 50%;}
+            .bank160:before { background-position: 60% 50%;}
+            .bank170:before { background-position: 80% 50%;}
+            .bank180:before { background-position: 100% 50%;}
+            .bank190:before { background-position: 0 75%;}
+        }
+    }
+    //link-申请最新报告
+    .aLinkGo {
+        color: $blue;
+        text-decoration: underline;
+        @include point(font-size,28);
+        @include point(line-height,60);
+        @include point(margin-top,15);
+        display: block;
+        text-align: center;
+    }
+    //蓝色按钮
+    .reportBlue {
+        @extend .blueBtn;
+        &.reBtn { @include box(margin,20,auto);}
+    }
+    //征信登录
+    .reportForm {
+        background: #fff;
+        li {
+            @include point(height,90);
+            overflow: hidden;
+            @include point(margin-left,25);
+            border-bottom: 1px solid #f1f1f1;
+            position:relative;
+            &.noB,&:last-child { border-bottom: 0;}
+            label {
+                display: block;
+                height: 100%;
+                .tit {
+                    color: #666;
+                    @include point(font-size,28);
+                    @include point(line-height,90);
+                }
+            }
+            input {
+                @include point(font-size,28);
+                @include point(line-height,50);
+                @include box(padding,20,0);
+                border: 0;
+                background-color: transparent;
+                @include point(margin-left,86);
+                color: #333;
+                &.inputA {
+                    width: 83%;
+                }
+                &.inputB {
+                    width:48%;
+                }
+                &.inputC {
+                    margin: 0;
+                    float: right;
+                    width: 69%;
+                    @include point(font-size,24);
+                }
+                &::-webkit-input-placeholder { color:#ccc;}
+            }
+            &.icon:after {
+                @include iconEle;
+                @extend .reportIcons;
+                @include point(top,20);
+                overflow: hidden;
+            }
+            &.userName:after {
+                background-position: 0 40%;
+            }
+            &.passWord:after {
+                background-position: 20% 40%;
+            }
+            &.checkCord:after {
+                background-position: 60% 40%;
+            }
+            &.idCode:after {
+                @extend .icon0913;
+                background-position: 40% 0;
+                
+            }
+            .codeImg {
+                float: right;
+                width: 30%;
+                padding: 0 3%;
+                @include box(margin,15,0);
+                img {
+                    width:100%;
+                    @include point(height,60);
+                }
+            }
+            .reCode {
+                @include point(font-size,24);
+                @include point(line-height,90);
+                color: $blue;
+                width: 30%;
+                position: absolute;
+                z-index: 4;
+                text-align: center;
+                top: 0;
+                right:0.9em;
+                text-indent: -999em;
+            }
+            //注册发送验证码
+            .regCheck {
+                position:absolute;
+                display: block;
+                @include point(width,150);
+                @include point(line-height,50);
+                @include point(border-radius,8);
+                text-align: center;
+                @include point(font-size,24);
+                @include point(top,20);
+                @include point(right,20);
+                background: $blue;
+                color: #fff;
+                &.gray { background: #ccc;}
+            }
+            
+            //20161008新增社保授权--文字版
+            &.txt1,&.txt2,&.txt3,&.txt4 {
+                @include point(font-size,28);
+                @include point(line-height,90);
+                span { float: left; width: 5.3em;}
+                label { display: block;}
+                .inputA { width: 73%; margin: 0;}
+                .inputB { width: 39%; margin: 0;}
+                .codeImg {
+                    margin: 0;
+                    img { position: relative; @include point(top,-3);}
+                }
+                .code {
+                   position:absolute;
+                   display:block;
+                   @include point(top,15);
+                   @include point(right,20);
+                   @include point(width,160);
+                   @include point(height,60);
+                   @include point(line-height,50);
+                   img { width: 100%; height: 100%;}
+               }
+            }
+            &.txt2 {
+               span { width: 4.2em;}
+               .inputA { width: 78%;}
+            }
+            &.txt3 {
+                span { width: 5.8em;}
+                .inputA { width: 70%;}
+                .liTip02 { @include point(padding-left,164);  }
+            }
+            &.txt4 {
+                span { width: 3.3em;}
+                .inputA { width: 82%;}
+            }
+            &.hasTip {height: auto;}
+            .liTip01 {
+                @include point(font-size,22);
+                @include point(line-height,32);
+                @include point(margin-bottom,12);
+                position: relative;
+                @include point(top,-8);
+                background: #b8b8b8;
+                width: 94%;
+                color: #fff;
+                padding:rem(5) 1.5%;
+                @include radius(6);
+                &:before {
+                    position: absolute;
+                    @include point(top,-18);
+                    @include point(left,24);
+                    display: block;
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    overflow: hidden;
+                    border:rem(10) solid;
+                    border-color:transparent transparent #b8b8b8 transparent;
+                }
+            }
+            .liTip02 {
+                @include point(font-size,22);
+                @include point(line-height,28);
+                color: #ccc;
+                @include box(padding,0,32,6,120);
+                position: relative;
+                @include point(top,-18);
+            }
+        }
+    }
+    //征信登录上面的提示
+    .reformTip {
+        @include point(font-size,24);
+        @include point(line-height,42);
+        @include box(padding,10,24);
+        &.icon-tip {
+            &:before {
+                content: '';
+                display: inline-block;
+                @include point(width,28);
+                @include point(height,28);
+                vertical-align: middle;
+                @extend .icon0913;
+                background-position: 40% 100%;
+                position: relative;
+                @include point(top,-2);
+                @include point(margin-right,10);
+            }
+        }
+    }
+    //身份验证-回答问题
+    .timeTip {
+        @include point(font-size,28);
+        @include point(line-height,76);
+        color: #fff;
+        text-align: center;
+        background: #323232;
+        span {
+            @include box(padding,0,12);
+            color:$blue;
+            
+        }
+    }
+    .ansList {
+        li {
+            @include box(padding,28,25,0);
+            @include point(font-size,24);
+            color: $fontBack;
+            p {
+                @include point(font-size,28);
+                @include point(line-height,46);
+                position: relative;
+                text-indent: 2.4em;
+                font-weight: bold;
+                span {
+                    position: absolute;
+                    display:block;
+                    left: 0;
+                    @include point(top,2);
+                    @include point(line-height,42);
+                    
+                    @include point(width,60);
+                    border-radius: rem(10);
+                    background: #323232;
+                    color: #fff;
+                    text-indent:0;
+                    text-align: center;
+                }
+            }
+            label {
+                @include point(line-height,74);
+                @include point(margin-top,18);
+                border: 1px solid #ddd;
+                display: block;
+                @include point(border-radius,12);
+                @include point(text-indent,22);
+                cursor: pointer;
+                input { display: none;}
+                &.hasChecked {
+                    background: $blue;
+                    border: 1px solid $blue;
+                    color: #fff;
+                    position: relative;
+                    &:after {
+                        @include iconEle;
+                        @extend .reportIcons;
+                        background-position: 40% 0;
+                        @include point(bottom,15);
+                        @include point(right,20);
+                    }
+                }
+            }
+        }
+    }
+    //征信报告封面
+    &.reportDetail {
+        color: $fontBack;
+        .rdTitle {
+            border-bottom:1px solid #d8d8d8;
+            position: relative;
+            background: #fff;
+            @include point(font-size,24);
+            @include point(line-height,44);
+            @include box(padding,13,0,13,24);
+            p {
+                position: absolute;
+                @include point(top,15);
+                @include point(right,26);
+                line-height: 1.1em;
+                text-align: right;
+                color: #999;
+                @include point(font-size,24);
+                b {
+                    color: $blue;
+                    display: block;
+                    @include point(font-size,40);
+                    line-height: 1.25em;
+                }
+            }
+        }
+        .rdSummary {
+            background: #fff;
+            border-bottom:1px solid #d8d8d8;
+            @include point(margin-top,18);
+            overflow: hidden;
+            dt {
+                @include point(line-height,76);
+                @include box(margin,0,24);
+                border-bottom: 1px solid #e8e8e8;
+                @include point(font-size,28);
+                position: relative;
+                &:after {
+                   @extend .rightArrow;
+                   @include point(right,-13);
+                }
+                a { @extend .aBlockLink; @extend .fontBack;}
+            }
+            dd {
+                width: 19.99%;
+                float: left;
+                @include point(font-size,20);
+                @include box(padding,80,0,10);
+                text-align: center;
+                position: relative;
+                i {
+                    @extend .txtEllipsis;
+                }
+                b {
+                    color: $blue;
+                    font-weight: normal;
+                    line-height: 2em;
+                    @include point(font-size,24);
+                    &.gray { color: #999;}
+                }
+                &.icon:after {
+                    @include iconEle;
+                    @extend .reportIcons;
+                    position: absolute;
+                    @include point(width,48);
+                    @include point(height,48);
+                    @include point(top,20);
+                    left: 50%;
+                    @include point(margin-left,-25);
+                }
+                &.icon01:after { background-position: 20% 20%; }
+                &.icon02:after { background-position: 40% 20%; }
+                &.icon03:after { background-position: 60% 20%; }
+                &.icon04:after { background-position: 80% 20%; }
+                &.icon05:after { background-position: 100% 20%; }
+            }
+        }       
+    }
+    //可通用记录列表
+    .reDetailList {
+        background: #fff;
+        @include point(margin-top,18);
+        @include point(padding-left,24);
+        border-bottom: 1px solid #d8d8d8;
+        &.mt0,&:first-child { margin-top: 0;}
+        @extend .fontBack;
+        dt {
+            @include point(font-size,28);
+            @include point(line-height,76);
+            border-bottom: 1px solid #f1f1f1;
+            position: relative;
+            a { @extend .aBlockLink; @extend .fontBack;}
+            &:after {
+                @extend .rightArrow;
+            }
+            &.noArrow:after { display: none;}
+            &:last-child { border-bottom: 0;}
+           span {
+                float: right;
+                @include point(font-size,24);
+                @include point(padding-right,60);
+                &.gray { @extend .gray;}
+            }
+            &.hasCon {
+                border-bottom: 0;
+                &:after { display: none;}
+                span {@include point(padding-right,24);}
+            }        
+        }
+        dd {
+            @include point(font-size,24);
+            @include point(margin-top,6);
+            background: #f1f3f4;
+            @include box(padding,20,16,20,0);
+            @include point(line-height,34);
+            position: relative;
+            word-break:break-all;
+            //带图标的
+            &.icon {
+                @include point(padding-left,70);
+                word-break: break-word; word-wrap:break-word; 
+                &:after {
+                    @include iconEle;
+                    @extend .reportIcons;
+                    position: absolute;
+                    bottom:50%;
+                    @include point(margin-bottom,-29);
+                    @include point(left,-8);
+                    @include point(width,58);
+                    @include point(height,58);
+                }
+            }
+            &.icon01:after {
+                background-position:60% 0;
+            }
+            &.icon02:after {
+                background-position:80% 0;
+            }
+            //不带图标的
+            &.detail {
+                @include box(padding,15,24,15,0);
+                @include point(line-height,50);
+                background: #fff;
+                p {
+                    overflow: hidden;
+                    span { float: left; width:50%; @extend .txtEllipsis; color: #999;}
+                }
+                &:before { display: none;} 
+            }
+            &:before {
+                position: absolute;
+                top: 0;
+                @include point(left,-22);
+                @include point(width,22);
+                background: #f1f3f4;
+                height: 100%;
+                content: '';
+                display: block;
+            }
+            &.mt0 { margin-top: 0;}
+        }
+        
+        
+    }
+    //等待身份验证码-报告申请中
+    .waitReport {
+        background: #fff;
+        overflow: hidden;
+        .pTit {
+            @include box(margin,60,0,30);
+            @include point(font-size,32);
+            @include point(line-height,75);
+            color: $blue;
+            text-align: center;
+            &:before {
+                display: inline-block;
+                @include point(width,65);
+                @include point(height,65);
+                @include point(margin-right,30);
+                background: url(../img/publicIcon.png) -0.4% 99.8% no-repeat;
+                background-size: 551.7%;
+                content: '';
+                vertical-align: middle;
+            }
+        }
+        .pCon {
+            @include point(font-size,24);
+            line-height:1.5em;
+            color: #666;
+            @include box(padding,0,30,35);
+        }
+    }
+    //无记录页面
+    .noRecord {
+        @include point(margin-top,260);
+        @include point(font-size,28);
+        text-align: center;
+        &:before {
+            @extend .reportIcons;
+            background-position:0% 100%;
+            background-size:200%;
+            display: block;
+            content: '';
+            @include point(width,150);
+            @include point(height,150);
+            @include box(margin,0,auto,32);
+        }
+    }
+    //短信+身份认证码
+    &.checkCodes {
+        @include point(font-size,24);
+        .pTit {
+           @include point(line-height,36); 
+           @include box(padding,20,24);
+        }
+        .checkSMS,.checkID {
+            @include point(height,76); 
+            @include point(line-height,76);
+            background: #fff;
+            position: relative;
+            @include point(font-size,28);
+            input {
+                @include point(font-size,28);
+                @include point(line-height,36); 
+                @include box(padding,20,0); 
+                width: 100%;
+                border: 0;
+                color: #333;
+                background-color: transparent;
+            }
+            input::-webkit-input-placeholder { color:#ccc;}
+            .send {
+                position: absolute;
+                top: 0;
+                right: 0;
+                @include point(width,200);
+                @include point(height,76);
+                background: $blue;
+                color: #fff;
+                text-align: center;
+                &.gray { background: #ccc;}
+            }
+            .codes {
+                position: absolute;
+                @include point(left,24);
+            }
+        }
+        .codeTips {
+            color: #999;
+            text-align: center;
+            @include point(line-height,42);
+            @include point(padding-top,5);
+            
+        }
+        .checkSMS input { @include point(text-indent,24);}
+        .checkID input {@include point(text-indent,220); }
+        .cMore {
+            display: block;
+            @include point(line-height,40);
+            @include point(padding-right,24);
+            color: $blue;
+            text-align: right;
+            position: relative;
+            @include point(top,-20);
+        }
+    }
+    //如何注册-注册步骤
+    &.regSteps {
+        p {
+           @include point(font-size,28); 
+           @include point(line-height,40); 
+           @include box(padding,36,24); 
+           .blue { color: $blue;}
+           &:first-child {@include point(padding-top,26); }
+        }
+        .icon {
+            display: block;
+            margin: 0 auto;
+            @include point(width,350);
+            @include point(height,350);
+            background: url(../img/recordSetpBg.jpg) no-repeat;
+            background-size: 500%;
+            text-indent: -999em;
+            &.icon02 { background-position:25% 0;}
+            &.icon03 { background-position:50% 0;}
+            &.icon04 { background-position:75% 0;}
+            &.icon05 { background-position:100% 0;}
+        }
+    }
+    //常见问题
+    &.comProblem {
+        dl {
+            background: #fff;
+            dt {
+                @include point(font-size,28);
+                @include point(line-height,46);
+                @include point(height,46);
+                border-bottom: 1px solid #e8eaec;
+                @include box(padding,15,60,15,24);
+                white-space:nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                position: relative;
+                
+                &:after {
+                    @extend .rightArrow;
+                    bottom: auto;
+                    @include point(top,14);
+                    @include point(right,12);
+                }
+            }
+            dd {
+                @include point(font-size,24);
+                @include point(line-height,38);
+                color: #666;
+                @include box(padding,20,24);
+            }
+            &.closeDL dd { display: none;}
+            &.open {
+                @include point(margin-bottom,28);
+                dt {
+                    height: auto;
+                    white-space: normal;
+                    &:after {
+                        transform: rotate(90deg);
+                        @include point(right,16);
+                    }
+                }
+                dd {
+                    display: block;
+                }
+            }
+        }
+    }
+    //注册、上传报告按钮
+    .reportMoreBtn {
+        @include point(padding-top,20);
+        text-align: center;
+        a {
+            display: inline-block;
+            width: 8.6em;
+            @include point(font-size,24);
+            @include point(line-height,58);
+            @include point(border-radius,8);
+            border: 1px solid $blue;
+            @include box(margin,4);
+            color: $blue;
+        }
+        
+    }
+    .reportMore {
+        @include point(font-size,24);
+        text-align: center;
+        color: $blue;
+        display: block;
+        line-height: 1.65em;
+        &:before {
+            display:inline-block;
+            @include point(width,35);
+            @include point(height,35);
+            @include point(margin-right,4);
+            background-position:100% 0;
+            position: relative;
+            @include point(top,-3);
+            vertical-align: middle;
+            content: '';
+            @extend .reportIcons;
+        }
+    }
+    //注册成功提示
+    .regSuccess {
+        @include point(font-size,32);
+        @include point(line-height,70);
+        @include box(padding,50,0,36);
+        background: #fff;
+        text-align: center;
+        &:before {
+            display: block;
+            margin: 0 auto;
+            @include point(width,100);
+            @include point(height,100);
+            content: '';
+            background: url(../img/publicIcon.png) center no-repeat;
+            background-position:-0.4% 99.8%;
+            background-size: 551.7%;
+        }
+    }
+}
+
+//芝麻信用相关
+.creidtZhima {
+    .zhimaCanvas {
+        text-align: center;
+        @include point(padding-top,170);
+        canvas {
+            @include point(width,450);
+            @include point(height,450);
+        }
+    }
+    .zhimafenError {
+        text-align: center;
+        color: #838b93;
+        @include point(font-size,28);
+        @include box(padding,184,0,182,0);
+        &:before {
+            display: block;
+            content: '';
+            @include point(width,160);
+            @include point(height,160);
+            @include box(margin,0,auto,20);
+            @extend .reportIcons;
+            background-size: 200%;
+            background-position: 100% 100%;
+        }
+    }
+}
+
+//个人报告头部帮助链接使用icon
+.top a.helpMore {
+    height: 100%;
+    padding: 0 3%;
+    right: 0;
+    i {
+        display:inline-block;
+        @extend .reportIcons;
+        @include point(width,48);
+        @include point(height,48);
+        background-position:100% 40% ;
+        text-indent: -999em;
+        vertical-align: middle;
+        position: relative;
+        @include point(top,-3);
+    }
+}
+
+//注册步骤显示
+.reportReg {
+    @include point(font-size,24);
+    position: relative;
+    width: 93.75%;
+    padding: 0 3.125% ;
+    overflow: hidden;
+    @include point(height,150);
+    background: #fff;
+    ul {
+        width: 150%;
+        li {
+            position: absolute;
+            @include point(top,16);
+            @include point(width,150);
+            line-height: 2em;
+            text-align: center;
+            &.ok {
+                i,&:after,&:before { background: #ff9500;}
+            }
+            i {
+                display: block;
+                @include point(width,78);
+                @include point(height,78);
+                @include point(line-height,78);
+                @include point(border-radius,40);
+                @include point(font-size,40);
+                margin: 0 auto;
+                text-align: center;
+                font-family: arial;
+                color: #fff;
+                background: #ccc;
+                
+            }
+            &:after,&:before {
+                display: block;
+                background: #f00;
+                content: '';
+                @include point(width,88);
+                @include point(height,10);
+                position: absolute;
+                @include point(top,37);
+                z-index: 1;
+                background: #ccc;
+            }
+            &:after {
+                @include point(right,-50);
+            }
+            &:before {
+                @include point(left,-50);
+                z-index: 2;
+            }
+            &.step01 {
+                left: 0;
+                &:before { display: none;}
+            }
+            &.step02 {
+                left: 50%;
+                @include point(margin-left,-75);
+                &:after {
+                    z-index: 3;
+                }
+            }
+            &.step03 {
+                right:0;
+                &:after { display: none;}
+            }
+            
+        }
+    }
+}
+.pTips {
+    color: #999;
+    @include point(font-size,24);
+    line-height: 1.4em;
+    @include box(padding,14,24,0);
+    text-align: justify;
+    &.noTop { @include point(margin-top,-5); padding-top: 0;}
+}
+//20161008新增弹层（仿20160908新增运营商认证五种弹窗）
+.alertTips { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); overflow: hidden; }
+.alertTips .alertTipsCon { width: 14.6875rem; position: fixed; bottom: 50%; left: 50%; background: #fff; border-radius: 0.3125rem; margin: 0 0 -3.125rem -7.34375rem; padding-top: 0.8125rem; }
+.alertTips .alertTipsCon .title { padding: 0 1.25rem 0 1.25rem; font-size: 0.875rem; line-height: 1.0625rem; font-weight: 500; }
+.alertTips .alertTipsCon .txCenter { text-align: center; }
+.alertTips .alertTipsCon .alertBtns { margin-top: 0.9375rem; border-top: 1px solid #e8e8e8; }
+.alertTips .alertTipsCon .alertBtns.twoBtn a, .alertTips .alertTipsCon .alertBtns.twoBtn span, .alertTips .alertTipsCon .alertBtns.twoBtn button { width: 49.9%; float: left; }
+.alertTips .alertTipsCon .alertBtns a, .alertTips .alertTipsCon .alertBtns span, .alertTips .alertTipsCon .alertBtns button { display: block; width: 100%; font-size: 0.875rem; line-height: 2.25rem; text-align: center; color: #3297fd; font-family: "microsoft yahei"; background: no-repeat; border: 0; cursor: pointer; }
+.alertTips .alertTipsCon .alertBtns .bold { font-weight: 500; }
+.alertTips .alertTipsCon .alertBtns .line { position: relative; }
+.alertTips .alertTipsCon .alertBtns .line:after { display: block; content: ''; position: absolute; top: 0; left: 0; width: 1px; height: 100%; background: #e8e8e8; }
+.alertTips .alertTipsCon .forms { padding: 0 0.9375rem 0 0.9375rem; }
+.alertTips .alertTipsCon .forms li { margin-top: 0.5625rem; font-size: 0.75rem; overflow: hidden; }
+.alertTips .alertTipsCon .forms li input { float: left; font-size: 0.75rem; padding: 0.625rem 0 0.625rem 0; height: 0.9375rem; text-indent: 0.375rem; border-radius: 0.25rem; border: 1px solid #ddd; }
+.alertTips .alertTipsCon .forms li input::-webkit-input-placeholder { color: #ccc; }
+.alertTips .alertTipsCon .forms li.liWarp { border: 1px solid #ddd; height: 2.1875rem; border-radius: 0.25rem; }
+.alertTips .alertTipsCon .forms li .inputType1 { width: 57%; padding-right: 3%; }
+.alertTips .alertTipsCon .forms li .inputType2 { width: 58%; border: 0; }
+.alertTips .alertTipsCon .forms li .inputType3 { width: 97%; border: 0; }
+.alertTips .alertTipsCon .forms li .checkImg { width: 36%; margin: 0.15625rem 0.15625rem 0 0; }
+.alertTips .alertTipsCon .forms li .checkImg, .alertTips .alertTipsCon .forms li .checkImg img { float: right; height: 1.875rem; }
+.alertTips .alertTipsCon .forms li .checkImg img { width: 100%; }
+.alertTips .alertTipsCon .forms li .checkCode { float: right; width: 36%; height: 2.25rem; line-height: 2.25rem; text-align: center; overflow: hidden; color: #fff; background: #3297fd; border-radius: 0.28125rem; }
+.alertTips .alertTipsCon .forms li .checkCode.gray { background: #ccc; }
+/* 加长版弹窗 */
+.alertTips .alertLong { @include point(width,520); @include point(margin-left,-260);}
+.alertTips .alertLong .title { @include box(padding,0,20); text-align: center; }
+
+//20160913-dialog会话-后期可做为通用样式
+.dialogBg { position: fixed; z-index: 100000; width:100%; height: 100%; top: 0; left: 0; background: transparent;}
+.dialog {
+    @include point(width,270);
+    @include point(height,124);
+    @include point(font-size,28);
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    @include box(margin,-82,0,0,-135);
+    @include box(padding,20,0);
+    background-color: rgba(0,0,0,0.8);
+    @include point(border-radius,10);
+    text-align: center;
+    color: #fff;
+    opacity: 1;
+    transition: all 0.2s;
+    &:before {
+        display: block;
+        content: '';
+        @include point(width,50);
+        @include point(height,50);
+        @include box(margin,12,auto,5);
+        background:url(../img/addIcon0913.png) no-repeat;
+        background-size: 600%;
+        //background-position: -999em -999em;
+    }
+    &.false:before {
+        background-position:20% 0;
+    }
+    &.true:before {
+        background-position:0 0%;
+    }
+    &.text:before,&.sort:before { display:none; }
+    &.text,&.sort {
+        @include point(width,492);
+        @include box(margin,-56,0,0,-246);
+        @include point(padding-top,16);
+        height:auto;
+    }
+    &.sort {
+        @include point(width,270);
+        @include point(margin-left,-135);
+    }
+    
+    &.hide {
+        opacity: 0;
+    }
+}
+
+//20161014新增支持银行列表
+.supportBank {
+    @include point(font-size,28);
+    p { @include point(line-height,74); @include point(text-indent,45); } 
+    dl {
+        @include point(line-height,80);
+        overflow: hidden;
+        dd {
+            float: left;
+            width: 49.99%;
+            &:before {
+                content: '';
+                float: left;
+                @include point(width,56);
+                @include point(height,56);
+                @include box(margin,13,28,0,45);
+                background: url(../img/bankIcon.png) no-repeat -100% -100%;
+                background-size: 600%;
+            }
+            &.bank10:before { background-position: 0 0;}
+            &.bank20:before { background-position: 20% 0;}
+            &.bank30:before { background-position: 40% 0;}
+            &.bank40:before { background-position: 60% 0;}
+            &.bank50:before { background-position: 80% 0;}
+            &.bank60:before { background-position: 100% 0;}
+            &.bank70:before { background-position: 0 25%;}
+            &.bank80:before { background-position: 20% 25%;}
+            &.bank90:before { background-position: 40% 25%;}
+            &.bank100:before { background-position: 60% 25%;}
+            &.bank110:before { background-position: 80% 25%;}
+            &.bank120:before { background-position: 100% 25%;}
+            &.bank130:before { background-position: 0 50%;}
+            &.bank140:before { background-position: 20% 50%;}
+            &.bank150:before { background-position: 40% 50%;}
+            &.bank170:before { background-position: 80% 50%;}
+            &.bank160:before { background-position: 60% 50%;}
+            &.bank180:before { background-position: 100% 50%;}
+            &.bank190:before { background-position: 0 75%;}
+        }
+    }
+}
+

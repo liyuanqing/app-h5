@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.foot-bar {
+    position: fixed;
+    z-index: 9;
+    bottom: 0;
+    width: 100%;
+    height: rem(100);
+    background: #ffffff;
+    box-shadow: 0px -5px 21px rgba(0,126,256,0.1);
+    ul{
+    	height:100%;
+    	display:-webkit-flex;
+    }
+    li{
+        -webkit-flex-grow:1;
+        font-size:rem(20);
+        line-height: rem(24);
+        text-align: center;
+        color:#bcc4cb;
+    }
+    i {
+        @extend .icon-bg;
+        @extend .after;
+        width: rem(60);
+        height: rem(60);
+        margin:rem(8) auto 0;
+        display: block;
+    }
+    .icon-home {
+        background-position: 30% 10%;
+    }
+    .icon-my {
+        background-position: 40% 10%;
+    }
+    //当前状态
+    .on {
+        color:#007eff;
+        .icon-home { background-position: 30% 0;}
+        .icon-my { background-position: 40% 0%;}
+    }
+}

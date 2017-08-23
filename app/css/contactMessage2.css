@@ -1,0 +1,23 @@
+.container{background-color: #E8EAEC;font-size: 26px;font-size: 0.8125rem;padding-bottom: 60px;padding-bottom: 1.875rem;}
+.smallTitle{color: #333;line-height: 60px;line-height: 1.875rem;text-indent: 20px;text-indent: 0.625rem;}
+
+.bk{background-color: #fff;padding-left: 20px;padding-left: 0.625rem;}
+.bk ul li{ float:left; display:inline; width:100%;height:76px;height:2.375rem;line-height: 2.375rem;border-bottom:1px solid #D5D5D5;}
+.bk ul li span{ float: left; display: inline; color: #999; width:144px;width:4.5rem; width:23.3%;}
+
+.selectWrap{ float: left; display: inline; width:70%;overflow: hidden;}
+.bk input{ float: left; display: inline; padding: 15px 0; padding: 0.46875rem 0; width:372px;width:11.625rem; width:60%;height:46px;height:1.4375rem;line-height:1.4375rem; border:none; outline: none; color: #333; font-size: 26px;font-size: 0.8125rem;}
+.bk select{ float: left; display: inline; padding: 15px 0; padding: 0.46875rem 0; box-sizing: content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; width:115%; height:46px;height:1.4375rem;line-height:1.4375rem; font-family:"微软雅黑";text-indent:0.3125rem;
+    background: url(../img/publicIcon.png) center no-repeat;background-position: 0% 68%;background-size: 198%;
+    border: none; outline: none; color: #333;font-size: 26px;font-size: 0.8125rem;-webkit-appearance:none;}
+
+/*.arrow{background: url(../img/publicIcon.png) no-repeat;width:0.625rem;height:0.9375rem;position:absolute;top:0.875rem;right: 0.625rem;*/
+    /*background-position: 39.6% 0;background-size: 4000%;}*/
+.bk ul li.noBorder{border:none;}
+
+form{padding-top: 3.125rem;}
+.top {position: fixed;top:0; left:0; width:100%;height:88px; height:2.75rem;z-index: 2016;}
+
+
+/*2016-04-15修改 */
+div.explain{color: #666;font-size: 24px;font-size:0.75rem;line-height: 36px;line-height: 1.125rem;padding:20px 20px;padding:0.625rem 0.625rem;}

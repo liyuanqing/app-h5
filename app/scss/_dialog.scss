@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+//转转
+.delayTime {
+    position:fixed;
+    z-index:101;
+    top:50%;
+    left:50%;
+    width:rem(250);
+    height:rem(200);
+    border-radius:rem(20);
+    margin: rem(-100) 0 0 rem(-125);
+    background:#000;
+    i {
+        display:block;
+        width:rem(78);
+        height:rem(78);
+        margin:rem(60) auto 0;
+        background:url(../img/delayBg.png) 0 0 no-repeat;
+        background-size:100%;
+        text-indent:-999em;
+        -webkit-animation:delayCir 1s infinite linear;
+        animation:delayCir 1s infinite linear;
+    }
+    &:after {
+        @extend .after;
+        position:fixed;
+        display:block;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+    }
+}
+
+@-webkit-keyframes delayCir{0%{ -webkit-transform:rotate(0deg);}100%{ -webkit-transform:rotate(360deg);}}
+@keyframes delayCir{0%{ transform:rotate(0deg);}100%{ transform:rotate(360deg);}}

@@ -1,0 +1,344 @@
+@charset "utf-8";
+@import '_mixin.scss';
+body,div,p,ul,ol,li,dl,dt,dd { padding: 0; margin: 0;}
+html,body,.container{
+    width:100%;
+    height:100%;
+    font-family: "microsoft yahei";
+}
+body{
+    background:#fff;
+}
+input{
+    font-family: "microsoft yahei";
+}
+.disNone{
+    display: none;
+}
+.container{
+    width:100%;
+    height:100%;
+    background:#fff;
+    position: relative;
+}
+/*头部*/
+.header{
+    position: relative;
+    //z-index: 1000;
+    width:100%;
+    height:rem(82);
+    text-align: center;
+    background:#3297FD;
+    h3{
+        font-size:rem(36);
+        padding-top: rem(22);
+        font-weight: normal;
+        color:#fff;
+    }
+    .return{
+        position: absolute;
+        left:rem(25);
+        top:rem(22);
+        width:rem(25);
+        height:rem(41);
+        background:url(../img/sjd_r1_c2.png) no-repeat;
+        background-size:100% 100%;
+    }
+}
+.main{
+    width:100%;
+    height:100%;
+    .banner{
+        width:100%;
+        img{
+            width:100%;
+            height:auto;
+        }
+    }
+/*注册模块*/
+    .user{
+            //display: none;
+            margin-top:rem(20);
+            p{
+            width:94%;
+            height:rem(90);
+            margin-left:3%;
+            border-bottom:1px solid #e8e8e8;
+            position: relative;
+            input{
+                width:100%;
+                height:100%;
+                border:none;
+                outline:none;
+                font-size:rem(28);
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+            }
+        }
+        p:nth-of-type(1){
+            margin-top:0;
+        /************success********************/
+            span:nth-of-type(1){
+                position:absolute;
+                width:rem(42);
+                height:rem(42);
+                background:url(../img/sjd_r5_c4.png) no-repeat;
+                background-size:100% 100%;
+                top:rem(24);
+                right:rem(20);
+                margin-left:rem(20);
+            }
+        /**********error*********************/
+            span:nth-of-type(2){
+                position:absolute;
+                width:rem(42);
+                height:rem(42);
+                background:url(../img/sjd_r5_c6.png) no-repeat;
+                background-size:100% 100%;
+                top:rem(24);
+                right:rem(20);
+                margin-left:rem(20);
+            }
+        }
+        p:nth-of-type(2){
+            .gray{
+                font-size:rem(24);
+                width:rem(145);
+                height:rem(50);
+                position:absolute;
+                background:#fff;
+                color:#ccc;
+                right:0;
+                top:rem(20);
+                font-weight: normal;
+                -webkit-appearance: none; -moz-appearance: none; -o-appearance: none; appearance: none;
+                //display: none;
+            }
+            .blue{
+                font-size:rem(24);
+                width:rem(145);
+                height:rem(50);
+                position:absolute;
+                background:#fff;
+                color:#3297FD;
+                right:0;
+                top:rem(20);
+                font-weight: normal;
+                -webkit-appearance: none; -moz-appearance: none; -o-appearance: none; appearance: none;
+            }
+        }
+    }
+/*设置密码模块*/
+    .pwd{
+        p{
+            width:94%;
+            height:rem(90);
+            margin-left:3%;
+            border-bottom:1px solid #e8e8e8;
+            position: relative;
+            input{
+                width:100%;
+                height:100%;
+                border:none;
+                outline:none;
+                font-size:rem(28);
+            }
+        }
+    }
+    p{
+        width:94%;
+        margin-left:3%;
+        border:none;
+        height:rem(67);
+        line-height: rem(67);
+        font-size:rem(24);
+        color:#b2b2b2;
+        a{
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            color:#3e9dfd;
+        }
+    }
+}
+/*注册按钮*/
+.bgBlue{
+    width:94%;
+    height:rem(80);
+    margin-left:3%;
+    border-radius:rem(10);
+    border:none;
+    outline:none;
+    background:#3E9DFD;
+    font-size:rem(32);
+    color:#fff;
+    font-weight: bold;
+    -webkit-appearance: none; -moz-appearance: none; -o-appearance: none; appearance: none;
+}
+.bgGray{
+    width:94%;
+    height:rem(80);
+    margin-left:3%;
+    border-radius:rem(10);
+    border:none;
+    outline:none;
+    background:#ccc;
+    font-size:rem(32);
+    color:#fff;
+    font-weight: bold;
+    -webkit-appearance: none; -moz-appearance: none; -o-appearance: none; appearance: none;
+}
+.tjGray{
+    width:94%;
+    height:rem(80);
+    margin-left:3%;
+    border-radius:rem(10);
+    border:none;
+    outline:none;
+    background:#ccc;
+    font-size:rem(32);
+    color:#fff;
+    font-weight: bold;
+    -webkit-appearance: none; -moz-appearance: none; -o-appearance: none; appearance: none;
+}
+.tjBlue{
+    width:94%;
+    height:rem(80);
+    margin-left:3%;
+    border-radius:rem(10);
+    border:none;
+    outline:none;
+    background:#3E9DFD;
+    font-size:rem(32);
+    color:#fff;
+    font-weight: bold;
+    -webkit-appearance: none; -moz-appearance: none; -o-appearance: none; appearance: none;
+}
+/************Dialog******************/
+.tck{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+    div{
+        width:rem(460);
+        height:rem(295);
+        background:#fff;
+        border-radius: rem(15);
+        position: absolute;
+        left:50%;
+        margin-left:rem(-230);
+        top:rem(243);
+        img{
+            width:100%;
+            height:auto;
+        }
+        input[type="button"]{
+            width:rem(262);
+            height:rem(59);
+            border:none;
+            outline: none;
+            border-radius: rem(10);
+            background:#3e9dfd;
+            color:#fff;
+            font-size:rem(21);
+            font-weight: normal;
+            margin-top:rem(8);
+            margin-left:rem(95);
+            -webkit-appearance: none; -moz-appearance: none; -o-appearance: none; appearance: none;
+        }
+    /********CLOSE***********/
+        .close{
+            display: block;
+            width:rem(40);
+            height:rem(40);
+            background:#fff;
+            border:1px solid #398de1;
+            border-radius: 50%;
+            position: absolute;
+            right:rem(-15);
+            top:rem(-15);
+            b{
+                margin-left:rem(10);
+                margin-top:rem(9);
+                display: block;
+                width:rem(20);
+                height:rem(21);
+                background:url(../img/close.png) no-repeat;
+                background-size:100% 100%;
+            }
+        }
+    }
+}
+/***************xieyi*********************/
+.xyk{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    background:#fff;
+    p{
+        width:96%;
+        font-size:rem(24);
+        margin-left:3%;
+    }
+}
+/**********errorText*******************/
+.errorText{
+    width:60%;
+    height:rem(70);
+    background:rgba(0,0,0,0.5);
+    text-align: center;
+    line-height: rem(70);
+    color:#fff;
+    border-radius: rem(10);
+    position: absolute;
+    left:20%;
+    top:rem(535);
+}
+
+.dialogBg { position: fixed; z-index: 100000; width: 100%; height: 100%; top: 0; left: 0; background: transparent; }
+.dialog { width: rem(500); height: 3.875rem; font-size:rem(26); position: fixed; z-index: 99999; top: 50%; left: 50%; margin: -2.5625rem 0 0 -4.21875rem; padding: 0.625rem 0 0.625rem 0; background-color: rgba(0, 0, 0, 0.8); border-radius: 0.3125rem; text-align: center; color: #fff; opacity: 1; transition: all 0.2s; }
+.dialog:before { display: block; content: ''; width: 1.5625rem; height: 1.5625rem; margin: 0.375rem auto 0.15625rem auto; }
+.dialog.text:before, .dialog.sort:before { display: none; }
+.dialog.text, .dialog.sort { width: 15.375rem; margin: -1.75rem 0 0 -7.6875rem; padding-top: 0.5rem; height: auto; }
+.dialog.sort { width: rem(500); margin-left:rem(-250); }
+.dialog.hide { opacity: 0; }
+
+//微信提供浏览器中打开
+.browserOpen {
+    background: rgba(0,0,0,.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    &:before{
+       display:block;
+       content:'';
+       width:2rem;
+       height:1.71875rem;
+       background:red;
+       position:fixed;
+       top:.85rem;
+       right:1.5rem;
+       background:url('../img/sjd_arrow.png') no-repeat;
+       background-size:100% 100%;
+    }
+    .con{
+        font-size:.8125rem;
+        line-height:1.5em;
+        width:11em;
+        text-align:center;
+        color:#fff;
+        position:fixed;
+        top:2.5rem;
+        right:4rem;
+        border:2px dashed #fff;
+        padding:.625rem 0;
+        font-weight:700;
+    }
+}
+@import '_media.scss';
+

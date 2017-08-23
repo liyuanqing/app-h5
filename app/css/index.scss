@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+.container { background-color: #e8eaec;}
+.disNone { display: none;}
+.tariffInfo a, .form ul li i, .alertContent .alertHead .close { background: url(../img/publicIcon.png) no-repeat;}
+
+.index-banner { position:relative; display:block; background-color: #fff; height:230px; height: 7.1875rem;  overflow:hidden;}
+.swiper-container {
+	margin:0 auto;
+	position:relative;
+	/*overflow:hidden;*/
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+	/* Fix of Webkit flickering */
+	z-index:1;
+	height:230px;
+	height: 7.1875rem;
+}
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	-webkit-transition-property:-webkit-transform, left, top;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+	
+	-moz-transition-property:-moz-transform, left, top;
+	-moz-transition-duration:0s;
+	-moz-transform:translate3d(0px,0,0);
+	-moz-transition-timing-function:ease;
+	
+	-o-transition-property:-o-transform, left, top;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	-o-transform:translate(0px,0px);
+	
+	-ms-transition-property:-ms-transform, left, top;
+	-ms-transition-duration:0s;
+	-ms-transform:translate3d(0px,0,0);
+	-ms-transition-timing-function:ease;
+	
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+}
+.swiper-free-mode > .swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	-ms-transition-timing-function: ease-out;
+	-o-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+.swiper-slide {
+	float: left;
+}
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+.pagination{position:absolute; width:100%; bottom: 8px; bottom: 0.25rem; text-align:center; z-index:1000}
+.pagination span{ display:inline-block; width: 10px; height: 10px; width: 0.3125rem; height: 0.3125rem; border-radius:50%; margin:0 10px; margin: 0 0.3125rem; background-color: #bfbfbf;}
+.pagination span.swiper-active-switch{ background-color: #fff;}
+
+.tariffInfo { margin-bottom: 10px; margin-bottom: 0.3125rem; background-color: #fff; display:none;}
+.tariffInfo li { float: left; display: inline; padding: 20px 0; padding: 0.625rem 0; width: 50%; border-bottom: 1px solid #ccc; overflow: hidden;}
+.tariffInfo li div { float: left; display: inline; padding-left: 25%; width: 100%; font-size: 26px; font-size: 0.8125rem; color: #333;}
+.tariffInfo li:last-child div { border-left: 1px solid #ccc;}
+.tariffInfo li .num { font-size: 32px; font-size: 1rem; color: #3297fd;}
+.tariffInfo a { display: inline-block; margin-left: 2%; width: 26px; height: 26px; width: 0.8125rem; height: 0.8125rem; background-size: 1700%; background-position: 29.8% 8.5%; vertical-align: -4px; vertical-align: -0.125rem;}
+/*.borrowInfo { border-top: 1px solid #ccc; }*/
+.borrowInfo .formTitle { padding: 3px 0 3px 20px; padding: 0.09375rem 0 0.09375rem 0.625rem; background-color: #fff; border-bottom: 1px solid #ccc;}
+.borrowInfo h4 { line-height: 2em;font-size: 28px; font-size: 0.875rem; color: #333; font-weight: normal;}
+.form { font-size: 26px; font-size: 0.8125rem;}
+.form ul { margin-bottom:20px; background-color: #fff;padding-bottom: 30px;padding-bottom: 0.9375rem;}
+.form li { position: relative; padding-top: 30px;padding-top: 0.9375rem;}
+.form input { width: 100%; border: none; }
+.form label { display: inline-block; padding-left: 3.125%; text-align: right; color: #666;}
+.form .inputText {width:69.1875%;-webkit-appearance: none;z-index: 201;background-color: transparent; height:60px;height:1.875rem;margin-left: 30px;margin-left: 0.9375rem;font-size: 26px; font-size: 0.8125rem;text-indent: 20px;text-indent: 0.625rem;border:1px solid #dcdcdc;font-family: "微软雅黑";color: #666;font-weight: bold;}
+.form .rangeTip { position: absolute; top: -32px; top: -1rem; left: 0; width: 100%;}
+.form .rangeTip span { position: absolute; top: 0; font-size: 22px; font-size: 0.6875rem; color: #ccc;}
+.form .rangeTip .maxTip { right: 0;}
+.form .rangeTip .currTip { color: #333;}
+.form .range { position: relative; width: 100%; -webkit-appearance: none; height: 2px; background-color: #a0a0a0; }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 30px; height: 30px; width: 0.9375rem; height: 0.9375rem; border-color: #3297fd; border-radius: 50%; background-color: #3297fd;}
+/*
+.form .range:before { position: absolute; top: -50px; top: -1.5625rem; left: 0; content: attr(min)"元"; font-size: 22px; font-size: 0.6875rem; color: #333;}
+.form .range:after { position: absolute; top: -50px; top: -1.5625rem; right: 0; content: attr(max)"元"; font-size: 22px; font-size: 0.6875rem; color: #ccc;}
+*/
+.form .radioList { margin-right: 0%; width: 75.78125%;}
+.form .radioList label { float: left; display: inline; margin-top: -8px; margin-top: -0.25rem; margin-right: 2%; width: 28%; height: 50px; height: 1.5625rem; line-height: 50px; line-height: 1.5625rem; border: 1px solid #ccc; font-size: 22px; font-size: 0.6875rem; text-align: center;}
+.form .radioList .curr { background-color: #3297fd; border-color: #3297fd; color: #fff;}
+
+.form .radioList input { -webkit-appearance: none; width: 0; height: 0; }
+/*.form select { position: absolute; top: 0; left: 0; -webkit-appearance: none; width: 100%; height: 25px; height: 0.78125rem; background: transparent; border: none; text-indent: 2000px; overflow: hidden;}*/
+/*.form .select label { position: absolute; top: 0; left: 0; width: 100%; background-color: #fff; border-bottom: 1px solid #a0a0a0; font-size: 22px; font-size: 0.6875rem; text-align: center; color: #333;}*/
+.form .select i { position: absolute; top: 10px; top: 0.3125rem; right: 0; width: 11px; width: 0.34375rem; height: 18px; height: 0.5625rem; background-position: 39.7% 0;background-size: 5000%;}
+
+.form .select .notice { position: absolute; top: 35px; top: 1.09375rem; left: 0; width: 100%; text-align: center; font-size: 18px; font-size: 0.5625rem; color: #999;}
+.form .btn { padding: 0 20px 120px; padding:0 0.625rem 3.75rem;}
+.form .subBtn { display: block; width:100%; background: #3297fd; text-align: center; color: #fff; font-size: 32px; font-size: 1rem; line-height:72px; height:2.25rem; line-height:2.25rem; border-radius:0.3125rem; -webkit-border-radius:0.3125rem; appearance:none; -webkit-appearance:none;}
+
+
+.alertBk { position: fixed; width:100%; height:100%; background:#000; top:0px; left:0px; _position: absolute; filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity: 0.7;opacity: 0.7; z-index:10000;}
+.alertContent { position: fixed; width: 420px; width: 13.125rem; _position: absolute; overflow:hidden; z-index:10001; background-color: #fff; border-radius: 5px; font-size: 22px; font-size: 0.6875rem; color: #333;}
+.alertContent .alertHead { position: relative; border-bottom: 1px solid #ccc;}
+.alertContent .alertHead h4 { padding-left: 5%; line-height: 2em; text-align: left; font-size: 26px; font-size: 0.8125rem; color: #333; font-weight: normal;}
+.alertContent .alertHead .close { position: absolute; top: 27%; right: 3%; width: 18px; height: 18px; width: 0.5625rem; height: 0.5625rem; background-size: 3000%; background-position: 40% 8%;}
+.alertContent .contentText { padding: 0 5%; }
+.alertContent .contentText p { padding: 5% 0; line-height: 1.5em;}
+
+
+
+/*2016-04-06修改 */
+.form ul li{position: relative;}
+.form ul li i{width:20px;width:0.625rem;height:16px;height:0.5rem;position:absolute;right:7.5%;top:57.5%;background-position: 40% 37%;z-index: 110;background-size: 2800%;}
+
+/* 20160723新增弹出框 */
+.alertBg2{width:100%;height:100%;background-color: #000;opacity: 0.7;position: fixed;top:0;left: 0;z-index: 20160;}
+.alertCon2{width:13.4375rem; padding-bottom:2.625rem; font-family:"微软雅黑";background-color:#fff;position: fixed;top:50%;left: 50%;margin-top: -3.0625rem;margin-left: -6.71875rem;border-radius: 0.3125rem;z-index: 20160;}
+.alertCon2 .alertH { font-size:0.75rem; padding-top:0.75rem; text-align:center; font-weight:bold;}
+.alertCon2 .alertC{ line-height:1.5; color: #333;font-size: 0.6875rem; padding:20px 20px 0; padding:0.625rem 0.625rem 0;}
+.sure{width:100%;height:2rem;font-family:"微软雅黑";position:absolute;bottom:0;cursor:pointer;line-height: 2rem;border-top:1px solid #3297fd;color: #3297fd;font-size: 0.8125rem;text-align: center;}
+.sure a:-webkit-any-link {color: #3297fd;}
+
+/* 20160728首页修改版式 */
+/* 覆盖 */
+.bannerCate,.swiper-container { height:auto;}
+.bannerCate .swiper-pagination-bullet { width:9px; height:9px; border:1px solid #fff; background:none; opacity:1; border-radius:6px; width:0.28125rem; height:0.28125rem; overflow:hidden; padding:0;}
+.bannerCate .swiper-pagination-bullet-active { background:#fff;}
+/* 新增 */
+.indexCategory { padding-bottom:130px; margin-top:20px; padding-bottom:4.0625rem; margin-top:0.625rem;}
+.indexCategory a { display:block;}
+.indexCategory dl { background:#fff; height:170px; height:5.3125rem; position:relative; overflow:hidden;}
+.indexCategory a dl:after { content:''; position:absolute; bottom:0; left:1rem; display:block; width:100%; height:1px; background:#eee;}
+.indexCategory a:last-child dl:after { background:none;}
+.indexCategory dl dt { position:absolute; top:1rem; left:1rem; width:110px; height:110px; width:3.4375rem; height:3.4375rem; overflow:hidden; text-indent:-999em; background:#f33; background:url(../img/indexIcon0728.png) no-repeat #fff; background-size:100%;}
+.indexCategory dl dt.icon2 { background-position:0 33%;}
+.indexCategory dl dt.icon3 { background-position:0 66.8%;}
+.indexCategory dl dt.icon4 { background-position:0 100%;}
+.indexCategory dl dd { padding-left:170px; padding-left:5.3125rem; font-size:24px; font-size:0.75rem; color:#999; margin-top:38px; margin-top:1.1875rem;}
+.indexCategory dl dd .bTit { display:block; line-height:48px; line-height:1.5rem; color:#333; font-weight:bold;}
+/* 20160804上传 */
+
+/* 20170704新增弹窗 */
+@import '_popup.scss';

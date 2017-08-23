@@ -1,0 +1,36 @@
+.container{background-color: #E8EAEC;font-size: 26px;font-size: 0.8125rem;padding-bottom: 60px;padding-bottom: 1.875rem;}
+
+.bk{background-color: #fff;padding-left: 20px;padding-left: 0.625rem;margin-top: 20px;margin-top: 0.625rem;}
+.bk ul li{width:100%;height:76px;height:2.375rem;line-height: 2.375rem;border-bottom:1px solid #D5D5D5;position: relative;}
+.bk ul li span{color: #999;display: block;float: left;width:208px;width:6.5rem;}
+
+.selectWrap{width:68%;height:72px;height:2.25rem;overflow: hidden;position: absolute;top: 0;right: 0;}
+.bk input{border:none;outline: none;color: #333;width:320px;width:10rem;height:46px;height:1.4375rem;line-height:1.4375rem;margin-top:0.375rem;font-size: 26px;font-size: 0.8125rem;}
+.bk select{width:115%;font-family:"微软雅黑";text-indent:0.3125rem;display: block;position: absolute;left: -2px;top:-4px;top:-0.125rem;
+    border:none;outline: none;color: #333;font-size: 26px;font-size: 0.8125rem;padding:0.75rem 0;-webkit-appearance:none;
+    background: url(../img/publicIcon.png) center no-repeat;background-position: 0% 68%;background-size: 198%;}
+
+/*.arrow{background: url(../img/publicIcon.png) no-repeat;width:0.625rem;height:0.9375rem;position:absolute;top:0.875rem;right: 0.625rem;*/
+    /*background-position: 39.6% 0;background-size: 4000%;}*/
+.bk ul li.noBorder{border:none;}
+
+form{padding-top: 3.375rem;}
+.top {position: fixed;top:0; left:0; width:100%; height:88px; height:2.75rem; z-index: 2016;}
+
+
+.disNone{display: none;}
+.alertBg{width:100%;height:100%;background-color: #000;opacity: 0.7;position: fixed;top:0;left: 0;z-index: 1992;}
+.alertCon{width:13.4375rem;height:8.5625rem;background-color:#fff;text-align: center;position: fixed;top:50%;left: 50%;margin-top: -3.0625rem;
+           margin-left: -6.71875rem;border-radius: 0.3125rem;z-index: 2016;}
+.alertCon .conTitle{font-size: 0.8125rem;color: #333;font-weight: bold;margin:0.9375rem 0;}
+.alertCon .conText{height:130px;height:4.0625rem;color: #666;font-size: 0.6875rem;line-height: 0.9375rem;}
+.sure{width:100%;height:2rem;font-family:"微软雅黑";position:absolute;bottom:0;cursor:pointer;line-height: 2rem;border-top:1px solid #3297fd;color: #3297fd;font-size: 0.8125rem;}
+
+/*2016-03-30 修改 */
+.bk .cityWrap{width:378px;width:11.8125rem;position: absolute;right: 5%;top: 0;}
+.bk .cityWrap select,.bk .cityWrap input{width:45%;float: left;-webkit-appearance: none;position: relative;
+    background: url(../img/publicIcon.png) center no-repeat;background-position: 31% 67.5%;background-size: 600%;}
+.bk .cityWrap select.city,.bk .cityWrap input.city{float: right;}
+
+/*2016-04-26修改 */
+div.explain{color: #666;font-size: 24px;font-size:0.75rem;line-height: 36px;line-height: 1.125rem;padding:20px 20px 0;padding:0.625rem 0.625rem 0;}

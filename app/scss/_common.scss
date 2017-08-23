@@ -1,0 +1,99 @@
+@charset "UTF-8";
+html,body,div,ul,ol,li,dl,dt,dd,p,img,input,select,textarea,button,a,span,h1,h2,h3 { padding: 0; margin: 0; outline: none; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+p { -webkit-margin-before: 0;  -webkit-margin-after: 0;}
+html { height: 100%;}
+ul,ol,li { list-style: none;}
+h1 { font-size: rem(36);}
+h2 { font-size: rem(32);}
+h3 { font-size: rem(28);}
+body { background: #fff; margin: 0 auto; font-family: "arial","microsoft yahei"; color: #555;}
+input,select,textarea,button,option { font-family:"arial","microsoft yahei"; font-size: rem(32);}
+input::-webkit-input-placeholder{
+    color: $gray;
+    opacity:1;
+}
+button { border: none;}
+a { color: #333; text-decoration:none; }
+
+body {
+    background:#f4f4f4;
+    min-height: 100%;
+    &:after,&:before {
+        display: block;
+        content: '';
+    }
+    &:after {
+        height:rem(110);
+    }
+}
+
+//伪类共用
+.after { content: ''; }
+//使用背景图的
+.icon-bg {
+    background: url(../img/icon2017.png?v=20170728) no-repeat;
+    background-size: 1100%;
+    width:rem(50);
+    height:rem(50);
+    display:block;
+    position: relative;
+}
+//普通段落文本
+.text-tips {
+    font-size: rem(28);
+    color: #666;
+    line-height: 1.35em;
+    text-align: justify;
+    padding: rem(18) rem(24);
+}
+//列表表单样式通用
+.ul-common { padding-left:rem(24); background: $white; }
+.li-common {
+    color: #000; font-size:rem(32); height: rem(90); line-height: rem(90); border-bottom: 1px solid #e8e8e8; position: relative; overflow: hidden; cursor: pointer;
+    &:last-child { border-bottom: 0;}
+}
+.arrow-common {
+   @extend .after;
+   @extend .icon-bg;
+   position: absolute;
+   top:50%;
+   right: rem(18);
+   z-index: 3;
+   width: rem(40);
+   height: rem(40);
+   margin-top: rem(-20);
+}
+//背景渐变
+.gradient {
+    $color1:#32b3fd;
+    $color2:#327afd;
+    background: -webkit-linear-gradient(left, $color1 , $color2);
+    background: -o-linear-gradient(right, $color1, $color2);
+    background: -moz-linear-gradient(right, $color1, $color2);
+    background: linear-gradient(to right, $color1 , $color2);
+}
+//边框
+.radius10 { border-radius: rem(10);}
+.radius12 { border-radius: rem(12);}
+//增加样式权重
+.disNone { display: none;}
+
+.bgF9 { background: #f9f9f9;}
+.container {
+    overflow: hidden;
+    //增加部分样式权重
+    .mt0 { margin-top: 0;}
+    .mt18 { margin-top: rem(18);}
+    .mt24 { margin-top: rem(24);}
+    //常用
+    .disNone { @extend .disNone;}
+    //背景颜色[bg-color-默认背景  bg-gray-置灰背景]
+    .bg-color { background:$color;}
+    .bg-gray { background: $gray;}
+    &.bgFFF,.bg-white { background: $white;}
+    .color { color: $color;}
+    .gray { color: $gray;}
+    .bold {font-weight: bold;}
+    .pb130 { padding-bottom: rem(130);}
+    .mb130 { margin-bottom: rem(130);}
+}

@@ -1,0 +1,265 @@
+@charset "UTF-8";
+//通用表单样式
+.form-list {
+    ul{ @extend .ul-common; }
+    li {
+       @extend .li-common;
+       overflow: auto;
+       height: auto;
+       //需要配合下面的icon_xx一起使用才见效
+       &:after {
+           @extend .arrow-common;
+           background-position: 9999em 9999em;
+       }
+       //**右箭头**[默认就是向右的键头]
+        &.icon-arrow {
+            &:after {
+                background-position: 40% 20%;
+            }
+//          .input {
+//               text-align: right;
+//          }
+        }
+        //**加号添加**
+        &.icon-add:after {
+            background-position: 60% 30%;
+            width: rem(44);
+            height: rem(44);
+            margin-top:rem(-22);
+            right: rem(25);
+        }
+        //**check选中**
+        &.icon-check:after {
+            background-position: 50% 30%;
+            right: rem(24);
+        }
+    }
+    //点击范围
+    label {
+        display: block;
+        span {
+            display: block;
+            padding: rem(25) 0;
+            line-height: rem(40);
+            width: rem(130);
+        }
+    }
+    //常规的input
+    input,.input {
+        font-size: rem(28);
+        line-height: rem(36);
+        height: rem(36);
+        width: 74.5%;
+        margin: rem(-18) 4% 0 0;
+        color: #444;
+        background: transparent;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        border: 0;
+        z-index: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    //下拉菜单--默认透明，通过JS传值
+    select {
+        font-size: rem(28);
+        height: 100%;
+        width: 100%;
+        padding-left: 20%;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        opacity: 0;
+    }
+    option { color: #666; font-size: rem(28);}
+    .gray { color:$gray;}
+    //textarea默认样式
+    textarea {
+        color: #444; border: 0; width: 96.8%; font-size: rem(28);
+        line-height: 1.5em;height:4.5em;
+    }
+    .form-li-area {
+        padding: rem(20) 0 rem(12);
+        height: auto;
+        overflow: hidden;
+    }
+}
+//表单文字居右对齐
+.form-align-right {
+    .input {
+        text-align: right;
+        width: 70%;
+        right: rem(40);
+    }
+}
+
+//所有子页下一步or确认or确定提交按钮
+.form-btn{
+    display: block;
+    font-size:rem(36);
+    color: #fff;
+    width:94%;
+    height:rem(90);
+    line-height: rem(90);
+    text-align: center;
+    margin-left:3%;
+    @extend .radius10;
+    @extend .gradient;
+}
+.form-btn-contain{
+  display: block;
+  font-size:rem(36);
+  color: #fff;
+  width:94%;
+  height:rem(90);
+  line-height: rem(90);
+  text-align: center;
+  margin-left:3%;
+  @extend .radius10;
+  // @extend .gradient;
+  .btn{
+    height:rem(90);
+    line-height: rem(90);
+    width:90%;
+    color: #fff;
+    border-radius: rem(15);
+    // margin-left: 5%;
+    @extend .gradient;
+  }
+}
+.form-btn-contain-fixed{
+  position:fixed;
+  z-index: 8;
+  top:97%;
+  margin:rem(-90) 0 0;
+  border-radius: 0;
+  width: 100%;
+}
+.form-btn-fixed {
+    position:fixed;
+    z-index: 8;
+    top:100%;
+    margin:rem(-90) 0 0;
+    border-radius: 0;
+    width: 100%;
+}
+//固定在底部的圆角图标
+.form-btn-radio-fixed {
+    position:fixed;
+    z-index: 8;
+    top:98%;
+    margin:rem(-90) 0 0 0;
+    border-radius: rem(5);
+    width: 90%;
+    left: 5%;
+    position: fixed;
+}
+
+
+//勾选是否**同意协议**
+.form-agreement {
+    position: relative;
+    z-index: 1;
+    display: block;
+    color: #999;
+    font-size: rem(28);
+    padding: rem(20) 0 rem(22) rem(24);
+    //默认勾选
+    &:before {
+        @extend .after;
+        @extend .icon-bg;
+        display: inline-block;
+        width: rem(32);
+        height: rem(32);
+        background-position: 30% 30%;
+        margin-right: rem(6);
+        top:rem(8);
+    }
+    //未勾选图标
+    &.no:before {
+        background-position: 40% 30%;
+    }
+    input { width: 0; height: 0; display: inline; border: none;}
+}
+
+//表单上部提示
+.form-tips {
+    background: $yellow;
+    color: #4e5057;
+    font-size: rem(24);
+    line-height: rem(38);
+    padding: rem(16) rem(24) rem(12) rem(96);
+    margin-bottom: rem(18);
+    position:relative;
+    &:before {
+        @extend .after;
+        @extend .icon-bg;
+        width: rem(60);
+        height: rem(60);
+        background-position: 70% 30%;
+        position: absolute;
+        left: rem(20);
+        top: 50%;
+        margin-top: rem(-30);
+    }
+}
+//表单中间标题
+.form-tit {
+    color: #000;
+    font-size: rem(32);
+    line-height: rem(90);
+    background: #e8e8e8;
+    text-align: center;
+}
+
+
+//图形验证码
+.form-code-img {
+    input {
+        width: 50%;
+        margin-right: 30%;
+    }
+    .imgCode {
+        position: absolute;
+        z-index: 4;
+        top: 0;
+        right:0;
+        padding:rem(10);
+        width: 26%;
+        height:rem(70);
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+//短信验证码
+.form-code-sms {
+    input {
+        width: 42%;
+        margin-right: 32%;
+    }
+    .smsBtn {
+        position: absolute;
+        z-index: 4;
+        top:50%;
+        right: rem(24);
+        width: 24%;
+        text-align: center;
+        height: rem(56);
+        line-height: rem(56);
+        margin-top: rem(-28);
+        font-size: rem(26);
+        background: $color;
+        color: #fff;
+        border-radius: rem(8);
+    }
+    .gray {
+        background: $gray;
+    }
+}

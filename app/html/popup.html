@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>弹出框</title>
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../css/style0728.css">
+    <link rel="stylesheet" href="../css/creditReport.css" />
+</head>
+<body>
+<div class="container">
+  <span onclick="pop1()">弹框一</span>
+  <span onclick="pop2()">弹框二</span>
+  <span onclick="pop3()">弹框三</span>
+  <span onclick="pop4()">弹框四</span>
+</div>
+<!-- 弹窗状态1[仅输入图片验证码] -->
+    <div class="alertTips  alertType01">
+    	<div class="alertTipsCon">
+    		<p class="title">提示123456</p>
+    		<div class="alertBtns twoBtn">
+    			<span class="cancelBtn">取消</span>
+    			<button class="bold line">确认</button>
+    		</div>
+    	</div>
+    </div>
+
+
+  <div class="delayTime disNone"><i>文案3</i><em></em></div>
+<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+<script src="../js/dialog.js"></script>
+<script>
+$(function(){
+	//点击弹层消失
+	$('.cancelBtn').on('click',function(){
+		$(this).parents('.alertTips').addClass('disNone');
+	});
+})
+function pop1(){
+  dialog('true','提示语');
+}
+function pop2(){
+  dialog('false','提示语');
+}
+function pop3(){
+  dialog('text','提示语');
+}
+function pop4(){
+  $(".delayTime").removeClass("disNone")
+}
+</script>
+</body>
+</html>

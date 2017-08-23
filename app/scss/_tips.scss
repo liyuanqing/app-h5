@@ -1,0 +1,31 @@
+@charset "UTF-8";
+//页面提示
+.page-tips {
+    font-size: rem(24);
+    text-align: center;
+    color: #a1a0a7;
+    padding: rem(120) rem(24);
+    .tit {
+        display: block;
+        color: #000;
+        font-size: rem(32);
+        line-height: rem(48);
+    }
+    &:before {
+        @extend .after;
+        @extend .icon-bg;
+        margin: 0 auto rem(48);
+        width: rem(136);
+        height: rem(136);
+        background-size: 366.66%;
+    }
+    //成功提示图标
+    &.status-suc:before {
+        background-position: 0% 100%;
+    }
+    //失败提示图标
+    &.status-err:before {
+        background-position: 37.6% 100%;
+    }
+}
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>计算器-微额贷</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="../css/style2017.css" />
+	</head>
+	<body>
+		<div class="container">
+
+			<!-- 头 -->
+			<div class="top-bar">
+				<div class="top-warp">
+					<a class="top-bar-back" href="#"></a>
+					<h1>微额贷</h1>
+				</div>
+			</div>
+
+			<!-- 20170725计算器页面 -->
+			<div class="compute-page">
+				<div class="compute-page-top">
+					<p class="compute-page-title">请选择借款金额</p>
+					<ul class="compute-page-edu">
+						<li>500</li>
+						<li class="on">1000</li>
+						<li>1500</li>
+					</ul>
+					<p class="compute-page-title">请选择借款期限</p>
+					<ul class="compute-page-time">
+						<li class="on">7</li>
+						<li>14</li>
+					</ul>
+				</div>
+				<div class="compute-page-bottom">
+					<ul>
+						<li>快信审费：<span class="compute-page-udit"></em></span>
+						<li>服务费：<span class="compute-page-server"></span></li>
+						<li>借款利息：<span class="compute-page-interest"></span></li>
+					</ul>
+					<div class="copywriting">
+						*活动文案活动文案活动文案活动文案活动文案活动文案活动文案活动文案活动文案活动文案
+					</div>
+				</div>
+			</div>
+
+			<!-- 协议 -->
+			<div class="form-agreement  mb130">
+				我已阅读并同意<a href="#" class="color">《个人信息收集授权协议》</a>
+				<input type="checkbox" value="false">
+			</div>
+
+			<!-- 按钮 -->
+			<div class="form-btn-contain form-btn-contain-fixed">
+				<button class="btn">确认</button>
+			</div>
+
+		</div><!-- container结束 -->
+
+		<script type="text/javascript" src="../js/jquery.min.js" ></script>
+		<script type="text/javascript" src="../js/app_head_2017.js" ></script>
+		<script>
+			//**********协议勾选开始
+				$('.form-agreement').on('click',function(){
+					//主要判断上面是否有no样式再...
+					var $this = $(this);
+					if($this.hasClass('no')){
+						$this.removeClass('no');
+						$this.children('input').val(true);
+					}else{
+						$this.addClass('no');
+						$this.children('input').val(false);
+					}
+				})
+				//协议a标签禁止冒泡
+				$('.form-agreement a').on('click',function(e){
+					e.stopPropagation();
+				})
+			//**********协议勾选结束
+
+
+			/*20170725计算器页面*/
+			var $udit = $('.compute-page-udit'),	//快信审费
+					$server = $('.compute-page-server'),			//服务费
+					$interest = $('.compute-page-interest')	//借款利息
+			var $edu = $('.compute-page-edu').find('.on').text(),
+					$day = $('.compute-page-time').find('.on').text();
+			//初始化值
+			computerValue($edu,$day)
+			//点击切换额度
+			$('.compute-page-edu li').on('click',function(){
+				if($(this).text() !== $edu){
+					$edu = $(this).text()
+					$(this).addClass('on').siblings('li').removeClass('on')
+					//重新计算
+					computerValue($edu,$day)
+				}
+			})
+			//点击切换天数
+			$('.compute-page-time li').on('click',function(){
+				if($(this).text() !== $day){
+					$day = $(this).text()
+					$(this).addClass('on').siblings('li').removeClass('on')
+					//重新计算
+					computerValue($edu,$day)
+				}
+			})
+			//将数值填入页面中
+			function computerValue(edu,day){
+				edu = parseInt(edu)
+				day = parseInt(day)
+				var rate
+				if(day=="7"){
+					rate=0.09
+				}else if(day=="14"){
+					rate=0.12
+				}
+				$udit.html(toDecimal(edu*0.03)+"元")
+				$server.html(toDecimal(edu*rate)+"元")
+				$interest.html(toDecimal(edu*(0.065+0)/365*day)+"元"+"-"+toDecimal(edu*(0.065+0.02)/365*day)+"元")
+			}
+			//取小数点后2位数
+			function toDecimal(x){
+				var f = parseFloat(x);
+				if (isNaN(f)) {
+					return false;
+				}
+				var f = Math.round(x*100)/100;
+				var s = f.toString();
+				var rs = s.indexOf('.');
+				if (rs < 0) {
+					rs = s.length;
+					s += '.';
+				}
+				while (s.length <= rs + 2) {
+					s += '0';
+				}
+				return s;
+			}
+			//取小数点后2位数完成
+		</script>
+	</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<title>推广页面</title>
+		<link rel="stylesheet" href="css/style170624.css" />
+	</head>
+	<body>
+		<div class="container">
+			<!-- banner -->
+			<div class="banner"><img src="img/banner170624.jpg" alt="凭身份证最高借20000元-实时到帐"></div>
+			<!-- form -->
+			<div class="form-warp">
+				<div class="input-frame">
+					<label>
+						<i class="icon icon-phone"></i>
+						<input type="number" placeholder="请输入手机号" />
+					</label>
+				</div>
+				<div class="input-warp-code">
+					<div class="input-frame">
+						<label>
+							<i class="icon icon-img"></i>
+							<input type="text" placeholder="请输入图形码" />
+						</label>
+					</div>
+					<img src="https://cgtzimage.b0.upaiyun.com/191810/00/00/42/2016/10/31/504180EC-0DDD-5ADE-F9E9-F04D61CF4014.png" class="linkImg"/>
+				</div>
+				<div class="input-warp-code">
+					<div class="input-frame">
+						<label>
+							<i class="icon icon-code"></i>
+							<input type="text" placeholder="请输入验证码" />
+						</label>
+					</div>
+					<button type="button" class="button-code" id="sendCode">获取验证码</button>
+				</div>
+				<div class="input-frame">
+					<label>
+						<i class="icon icon-password"></i>
+						<input type="password" placeholder="请设置6~16位字母及数字组合密码" />
+					</label>
+				</div>
+				<div class="error-warp">
+					<!-- 下面放错误信息 -->
+					<!--<div class="errorText">请输入手机号码</div>-->
+				</div>
+				<button type="button" class="button-submit">立即借钱</button>
+				<p class="agreement-link">点击注册视为同意《<a href="#">注册服务协议</a>》</p>
+			</div>
+			<!-- footer -->
+			<div class="footer">【借贷有风险，选择需谨慎】浙ICP备16033601号-2<br>杭州朗格金融信息服务有限公司</div>
+			
+			
+			
+			<!-- 20170809底部浮动 -->
+			<div class="foot-fixed">
+				<p class="btn-down">立即下载</p>
+				<p class="text">宋江贷--小额借贷找宋江</p>
+			</div>
+			
+			<!-- 注册成功 -->
+			<div class="reg-success-wap disNone">
+				<div class="reg-success">
+					<span class="reg-closed">&times;</span>
+					<img src="https://cgtzfiles.b0.upaiyun.com/cgjr/jrwx/tui/img/dialog.png" />
+					<button type="button" class="reg-btn">即刻下载</button>
+				</div>
+			</div>
+			
+			
+			<!-- 20170809新增浮层 -->
+			<div class="fixed-dialog">
+				<div class="dialog-warp">
+					<h3>您已注册</h3>
+					<p>请立即前往宋江贷APP</p>
+					<a class="submit">前往APP</a>
+				</div>
+			</div>	
+			
+		</div>
+		
+		<script src="http://style.cgjr.com/jrwx/js/jquery-1.10.1.min.js"></script>
+		<script>
+    $(function(){
+    	//倒计时
+    	$('#sendCode').on('click',function(){
+    		var $this = $(this);
+    		if($this.html() == '获取验证码'){
+    			$this.html('<span id="timeOut">60</span> 秒');
+    			$this.addClass('gray');
+    			var timeNum = $('#timeOut');
+    			var saveTime = setInterval(function(){setTimeOver(timeNum.html())},1000);
+    			function setTimeOver(aNum){
+    				aNum--;
+    				timeNum.html(aNum);
+    				if(aNum==0){
+    					clearInterval(saveTime)
+    					$this.html('获取验证码');
+    					$this.removeClass('gray')
+    				}
+    			}
+    		}
+    	})
+    	//弹出提示框(关闭)
+    	$('.reg-closed').on('click',function(){
+    		$(this).parents('.reg-success-wap').addClass('disNone');
+    	})
+    	//弹出提示框(打开)
+    	$('.button-submit').on('click',function(){
+    		$('.reg-success-wap').removeClass('disNone')
+    	})
+    	
+    	//input获取焦点时边框加深
+    	$('input').focus(function(){
+    		$(this).parents('.input-frame').addClass('focus')
+    	}).blur(function(){
+    		$(this).parents('.input-frame').removeClass('focus')
+    	})
+    	
+    	
+    	//获取焦点时将表单整体上移
+    	var $container = $('.container');
+    	var $offsetHeight = $('.form-warp').offset().top;
+    	$('.form-warp input').focus(function(){
+    		$container.css('padding-bottom',$offsetHeight)
+    		$('body').scrollTop($offsetHeight)
+    	}).blur(function(){
+    		$container.css('padding-bottom',0)
+    	})
+    	
+    })
+	</script>
+	</body>
+</html>

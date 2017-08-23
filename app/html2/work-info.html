@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>工作信息</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="../css/style2017.css" />
+	</head>
+	<body>
+		<div class="container">
+			
+			<!-- 头 -->
+			<div class="top-bar">
+				<div class="top-warp">
+					<a class="top-bar-back" href="#"></a>
+					<h1>工作信息</h1>
+				</div>
+			</div>
+			
+			<!-- 主要提示 -->
+			<p class="form-tips">我司工作人员可能会通过您填写的单位进行核实,请您正确填写下列信息</p>
+			
+			<!-- 主体内容 -->
+			<div class="form-list form-align-right">
+				<div class="errorMessage disNone">请填写正确的公司名称</div>
+				<ul>
+					<li>
+						<label>
+							<span>公司名称</span>
+							<input type="text" value=""/>
+						</label>
+					</li>
+					<li>
+						<label>
+							<span>公司电话</span>
+							<input type="text" value="" placeholder="0571-00000000" id="telPhone"/>
+						</label>
+					</li>
+					<li>
+						<label>
+							<span>工作收入</span>
+							<input type="number" value="" placeholder="请输税前月收入"/>
+						</label>
+					</li>
+					<li class="icon-arrow selectDate">
+						<span>入职时间</span>
+						<span class="input"></span>
+						<input type="hidden" class="inputDate" value="" />
+					</li>
+					<li class="icon-arrow selectCity">
+						<span>公司地址</span>
+						<span class="input"></span>
+						<input type="hidden" value="海南省" class="inputCity" />
+						<input type="hidden" value="" class="inputCity" />
+						<input type="hidden" value="" class="inputCity" />
+					</li>
+					<li class="form-li-area">
+						<textarea class="textForAddress"></textarea>
+					</li>
+				</ul>
+				<button class="form-btn form-btn-fixed bg-gray">确认</button>
+			</div>
+			
+		</div><!-- container结束 -->
+		
+		<script type="text/javascript" src="../js/jquery.min.js" ></script>
+		<script type="text/javascript" src="../js/app_head_2017.js" ></script>
+		<script type="text/javascript" src="../js/scroll-select.js" ></script>
+		<script>
+			//******************弹省市区联动开始
+				//填写地址默认值
+				var $selectCityStr = '';
+				var $selectCityPrev = $('.selectCity .input');
+				$('.selectCity .inputCity').each(function(){
+					$selectCityStr += $(this).val();
+				})
+				if($selectCityStr !== ''){
+					$selectCityPrev.html($selectCityStr);
+				}else{
+					$selectCityPrev.html('请选择').addClass('gray');
+				}
+				//弹出三栏地址
+				$('.selectCity').on('click',function(){
+					$.getJSON("../js/city.json",function(result){
+					   scrollSelect.go({
+					   		data:result,
+					   		level:3,
+					   		el:'.selectCity .input',
+					   		elArr:'.inputCity',
+					   		type:'address'
+					   })
+					});
+				})
+				//level : 几联的
+				//el    : 组合显示字符串
+				//elArr : 单个字符串的
+				//type  : 暂为地址和日期[address,calendar]
+			//******************弹省市区联动结束
+			//***********弹出年月日期参数基本同上
+				//填写日期默认值
+				var $inputDate = $('.inputDate') , $inputDatePrev = $inputDate.prev('.input');
+				if($inputDate.val() !== ''){
+					var dateStr = '';
+					var dateArr = $inputDate.val().match(/[0-9]{1,4}/g);
+					for(var i = 0; i< dateArr.length; i++){
+						switch(i){
+							case 0:
+								dateStr += dateArr[i]+"年";
+								break;
+							case 1:
+								dateStr += dateArr[i]+"月";
+								break;
+							case 2:
+								dateStr += dateArr[i]+"日";
+								break;
+						}
+					}
+					$inputDatePrev.html(dateStr);
+				}else{
+					$inputDatePrev.html('请选择').addClass('gray');
+				}
+				//事件
+				$('.selectDate').on('click',function(){
+					scrollSelect.go({
+						level:2,
+						el:'.selectDate .input',
+						elArr:'.inputDate',
+						type:'calendar'
+					})
+				})
+			//***********弹出年月日完成
+				
+			
+			
+			//**********textarea默认值开始
+			var addressDefault = '请填写详细地址,不少于五个字';
+			var $address = $('.textForAddress');
+			if($address.val() == ''){
+				$address.val(addressDefault).addClass('gray');
+			}else{
+				$address.removeClass('gray');
+			}
+			$address.on('focus',function(){
+				if($address.val() === addressDefault){
+					$address.val('');
+					$address.removeClass('gray');
+				}
+			}).on('blur',function(){
+				if( /(请填)/.test($address.val()) === true || $address.val() === '' ){
+					$address.val(addressDefault);
+					$address.addClass('gray');
+				}
+			});
+			//**********textarea默认值结束
+			
+			
+			//***********点击按钮弹出错误层			
+			$('.form-btn').on('click',function(){
+				$('.errorMessage').removeClass('disNone')
+				//倒计时将层隐藏或删除
+				setTimeout(function(){
+					//删除dom可使用
+					//$('.errorMessage').remove();
+					//只隐藏
+					$('.errorMessage').addClass('disNone')
+				},2000)
+			})
+			
+			
+			
+			//**20170328新增电话加“-”
+			$('#telPhone').bind('propertychange input',function(){
+				var $this = $(this);
+				var $thisVal = $this.val();
+				var reg1 = /^0[1-2][0-9]/;
+				var reg2 = /^0[3-9][0-9]{2}/;
+				if( ($thisVal.length == 3 && reg1.test($thisVal)=== true) || ($thisVal.length == 4 && reg2.test($thisVal)===true) ){
+					$this.val($thisVal+'-')
+				}
+			})
+		</script>
+	</body>
+</html>

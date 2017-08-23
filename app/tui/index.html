@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>宋江贷</title>
+		<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+		<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+		<meta HTTP-EQUIV="expires" CONTENT="0">
+		<meta name="keywords" content="宋江贷" />
+		<meta name="description" content="尽我所能急你所需" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="format-detection" content="telephone=no" />  
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="Expires" content="-1" />
+		<meta http-equiv="pragram" content="no-cache" />
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	</head>
+	<script src="http://www.zhangxinxu.com/study/js/mini/prefixfree.min.js"></script>
+	<link rel="stylesheet" href="css/tuiguang.css" />
+
+	<body>
+		<div id="container" class="container">
+			<!--头部-->
+			<div id="main" class="main">
+				<div id="banner" class="banner">
+					<img src="img/banner.png" alt="宋江贷" />
+				</div>
+				<!--手机号注册-->
+				<div class="user" id="user">
+					<p>
+					<input type="number" placeholder="请输入手机号"/>
+					<!--手机号输入成功显示-->
+					<span id="success" class="success disNone"></span>
+					<!--手机号输入错误显示-->
+					<span id="error" class="error disNone"></span>
+					</p>
+					<p>
+						<input type="text" placeholder="验证码"/>
+						<!--<span id="yzm">发送验证码</span>-->
+						<!--倒计时-->
+						<input type="button" value="发送验证码" id="btn" class="gray"/>
+					</p>
+				</div>
+				<div class="pwd disNone" id="pwd">
+					<p>
+						<input type="text" placeholder="请设置6~16位字母及数字组合密码"/>
+					</p>
+				</div>
+				<p>点击注册视为同意<a href="xy.html">《注册服务协议》</a></p>
+				<input type="button" value="确定提交" class='bgGray'/>
+				<input type="submit" value="立即注册" id="tjBtn" class="tjGray disNone"/>
+			</div>
+			<!--错误提示框-->
+			<!--<p id="errorText" class="errorText disNone">提示错误内容</p>-->
+			
+		</div>
+		<!--弹出框-->
+		<div id="tck" class="tck disNone">
+			<div>
+				<img src="img/dialog.png" alt="" />
+				<input type="button" value="即刻下载" id="down"/>
+				<!--关闭按钮-->
+				<span id="close" class="close">
+					<b></b>
+				</span>
+			</div>
+			
+		</div>
+		<!--协议内容-->
+		
+		<!-- 新增微信浏览器弹出开始 -->
+		<div class="browserOpen disNone" id="browser">
+        	<p class="con">请点击右上角<br/>“在浏览器中打开”</p>
+        </div>
+		<!-- 新增微信浏览器弹出结束 -->
+	</body>
+	<script src="js/jquery-1.10.1.min.js"></script>
+	<script src="js/dialog.js"></script>
+	<script>
+		dialog('sort','错误信息',1200);  //如果有错误的话就用这个格式弹
+		
+		$('.bgBlue').on('click',function(){
+			$('#user').addClass('disNone');
+			$('#pwd').removeClass('disNone');
+			$(this).addClass("disNone");
+			$("#tjBtn").removeClass("disNone");
+		})
+	</script>
+	<script src="js/tuiguang.js"></script>
+</html>

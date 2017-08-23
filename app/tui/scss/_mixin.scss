@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@function rem($val){ @return ($val/75)+rem; }
+$blue-light:#6f8aa8;
+$gray:#999;
+
+
+html,body,div,p,input,button{
+    padding: 0;
+    margin: 0;
+    outline:none;
+}
+html {
+    height: 100%;
+}
+body { 
+    font-family: "microsoft yahei";
+    font-size: rem(24);
+    color: #222;
+    min-height: 100%;
+    background:url(../img/body170624-bg.jpg) bottom left no-repeat #fff;
+    background-size: 100%;
+    
+}
+a { color:$blue-light; text-decoration: none;}
+
+input,button {
+    -webkit-appearance: none;
+}
+
+input:-webkit-autofill {  
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+input,button {
+    &:focus{
+     outline:none;
+    }
+}
+input::-webkit-input-placeholder {
+    color: #ccc;
+}
+button {
+    font-size: rem(30);
+    border: 0;
+    cursor: pointer;
+}
+
+
+.disNone { display: none;}

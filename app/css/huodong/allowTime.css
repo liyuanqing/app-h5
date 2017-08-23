@@ -1,0 +1,32 @@
+.allowBanner img {
+  display: block;
+  width: 100%; }
+
+.contentDl {
+  padding-bottom: 3.125rem; }
+  .contentDl dl {
+    padding: 0.25rem 1.09375rem 1rem 1.09375rem;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: #666; }
+    .contentDl dl .blue, .contentDl dl dt {
+      color: #2f7eff; }
+    .contentDl dl dt {
+      font-weight: bold;
+      padding-bottom: 0.375rem; }
+      .contentDl dl dt .icon {
+        float: left;
+        width: 1.125rem;
+        height: 1.125rem;
+        text-align: center;
+        color: #fff;
+        border-radius: 0.15625rem;
+        background: #2f7eff;
+        font-size: 0.6875rem;
+        font-family: arial;
+        font-weight: normal;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-right: 0.375rem; }
+
+/*# sourceMappingURL=allowTime.css.map */

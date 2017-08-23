@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>完善信息</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="../css/style2017.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="top-bar">
+				<div class="top-warp">
+					<a class="top-bar-back" href="#"></a>
+					<h1>完善信息</h1>
+				</div>
+			</div>
+			<div class="form-list form-align-right">
+				<ul>
+					<li class="icon-arrow click-select">
+						<span>学历</span>
+						<span class="input"></span>
+						<select>
+							<option value="1" selected="selected">本科</option>
+							<option value="2">大专</option>
+							<option value="3">高中</option>
+							<option value="4">初中</option>
+							<option value="5">小学</option>
+						</select>
+					</li>
+					<li class="icon-arrow click-select">
+						<span>婚姻状况</span>
+						<span class="input"></span>
+						<select>
+							<option>已婚</option>
+							<option>未婚</option>
+						</select>
+					</li>
+					<li class="icon-arrow selectDate">
+						<span>入住时间</span>
+						<span class="input"></span>
+						<input type="hidden" class="inputDate" />
+					</li>
+					<li class="icon-arrow selectCity">
+						<span>所在地区</span>
+						<span class="input"></span>
+						<input type="hidden" class="inputCity" />
+						<input type="hidden" class="inputCity" />
+						<input type="hidden" class="inputCity" />
+					</li>
+					<li class="form-li-area">
+						<textarea class="textForAddress"></textarea>
+					</li>
+				</ul>
+				<button class="form-btn form-btn-fixed bg-gray">确认</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery.min.js" ></script>
+		<script type="text/javascript" src="../js/app_head_2017.js" ></script>
+		<script type="text/javascript" src="../js/scroll-select.js?v=20170323" ></script>
+		<script>
+			//************下拉开始
+			$('.click-select select').each(function(index){
+				var $this = $(this)
+				var $flag = false;
+				//获取上面元素
+				var $prev = $this.prev('.input');
+				$this.children('option').each(function(){
+					if($(this).attr('selected') !== undefined) $flag = true;
+				});
+				if($flag) $prev.removeClass('gray').html($(this).find('option:selected').text());
+				else $prev.html('请选择').addClass('gray');
+				//下拉数值有变化的时候，使用span模拟接受值
+				$(this).on('change',function(){
+					var thisVal = $(this).find('option:selected').text();
+					$prev.html(thisVal);
+					if(/(请选择)/.test(thisVal) === true || thisVal === '') $prev.addClass('gray');
+					else $prev.removeClass('gray');
+				})
+			})
+			//************下拉结束
+			
+			//******************弹省市区联动开始
+				//填写地址默认值
+				var $selectCityStr = '';
+				var $selectCityPrev = $('.selectCity .input');
+				$('.selectCity .inputCity').each(function(){
+					$selectCityStr += $(this).val();
+				})
+				if($selectCityStr !== ''){
+					$selectCityPrev.html($selectCityStr);
+				}else{
+					$selectCityPrev.html('请选择').addClass('gray');
+				}
+				//弹出三栏地址
+				$('.selectCity').on('click',function(){
+					$.getJSON("../js/city.json",function(result){
+					   scrollSelect.go({
+					   		data:result,
+					   		level:3,
+					   		el:'.selectCity .input',
+					   		elArr:'.inputCity',
+					   		type:'address'
+					   })
+					});
+				})
+				//level : 几联的
+				//el    : 组合显示字符串
+				//elArr : 单个字符串的
+				//type  : 暂为地址和日期[address,calendar]
+			//******************弹省市区联动结束
+			//***********弹出年月日期参数基本同上
+				//填写日期默认值
+				var $inputDate = $('.inputDate') , $inputDatePrev = $inputDate.prev('.input');
+				if($inputDate.val() !== ''){
+					var dateStr = '';
+					var dateArr = $inputDate.val().match(/[0-9]{1,4}/g);
+					for(var i = 0; i< dateArr.length; i++){
+						switch(i){
+							case 0:
+								dateStr += dateArr[i]+"年";
+								break;
+							case 1:
+								dateStr += dateArr[i]+"月";
+								break;
+							case 2:
+								dateStr += dateArr[i]+"日";
+								break;
+						}
+					}
+					$inputDatePrev.html(dateStr);
+				}else{
+					$inputDatePrev.html('请选择').addClass('gray');
+				}
+				//事件
+				$('.selectDate').on('click',function(){
+					scrollSelect.go({
+						level:2,
+						el:'.selectDate .input',
+						elArr:'.inputDate',
+						type:'calendar'
+					})
+				})
+			//***********弹出年月日完成
+			
+			
+			//**********textarea默认值开始
+			var addressDefault = '请填写详细地址,如：XX街道XXX小区XX幢XX单元XX室';
+			var $address = $('.textForAddress');
+			if($address.val() == ''){
+				$address.val(addressDefault).addClass('gray');
+			}else{
+				$address.removeClass('gray');
+			}
+			$address.on('focus',function(){
+				if($address.val() === addressDefault){
+					$address.val('');
+					$address.removeClass('gray');
+				}
+			}).on('blur',function(){
+				if( /(请填)/.test($address.val()) === true || $address.val() === '' ){
+					$address.val(addressDefault);
+					$address.addClass('gray');
+				}
+			});
+			//**********textarea默认值结束
+			
+		</script>
+	</body>
+</html>

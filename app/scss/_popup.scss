@@ -1,0 +1,236 @@
+@charset "UTF-8";
+.popup-tips {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    font-size: rem(28);
+    //标题
+    .tit {
+        font-size: rem(32);
+        color: #333;
+        font-weight: bold;
+        text-align: center;
+        padding-top: rem(28);
+    }
+    //普通内容
+    .con {
+        padding: rem(24) rem(20) rem(36);
+    }
+    //提示文本[文字多]
+    .tip {
+        padding: rem(36) rem(20);
+    }
+    .center { text-align: center;}
+}
+.popup-warp {
+    position:relative;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    width: rem(580);
+    margin: rem(-140) 0 0 rem(-290);
+    background-color: #fff;
+    border-radius: rem(22);
+    padding-bottom: rem(90);
+    &.w600 {
+        width: rem(600);
+        margin-left:rem(-300);
+    }
+    &.w500 {
+        width: rem(500);
+        margin-left:rem(-250);
+    }
+    &.w460 {
+        width: rem(460);
+        margin-left:rem(-230);
+    }
+    &.w420 {
+        width: rem(420);
+        margin-left:rem(-210);
+    }
+    &.h600 {
+        margin-top: rem(-300);
+    }
+    &.h500 {
+        margin-top: rem(-250);
+    }
+    &.h450 {
+        margin-top: rem(-225);
+    }
+    &.h700 {
+        margin-top: rem(-350);
+    }
+    //公告
+    &.bulletin {
+        height: rem(830);
+        margin-top: rem(-460);
+        .tit,.con { padding-left:rem(24); padding-right: rem(24);}
+        .tit {
+            text-align: left;
+        }
+        .con {
+            line-height: 1.6em;
+            padding-bottom: rem(10);
+            font-size: rem(24);
+        }
+        .red {
+            color: #d32;
+            font-weight: bold;
+        }
+        .link {
+            text-decoration: underline;
+            color: $color;
+            cursor: pointer;
+        }
+        .icon-back {
+            position: absolute;
+            right:rem(10);
+            top: rem(10);
+            border: rem(16) solid #fff;
+            text-indent: -999em;
+            @extend .icon-bg;
+            background-position: 0 40%;
+            cursor: pointer;
+        }
+    }
+}
+//公告显示文字
+.popup-show-text {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 200%;
+    .showText01,.showText02 {
+        width: 50%;
+        float:left;
+    }
+}
+.popup-btns {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: rem(90);
+    width: 100%;
+    span,a,button {
+        height: 100%; width: 100%; line-height: rem(90); display: block; font-size: rem(36);
+        background:none ; color: $gray;
+        text-align: center; cursor:pointer;
+    }
+    .color {
+        color: #fff;
+        @extend .gradient;
+    }
+}
+//当两个按钮时
+.popup-btns-two {
+    span,a,button {
+        float: left;
+        width: 50%;
+        position: relative;
+    }
+    .end:before {
+        @extend .after;
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 1px;
+        height:rem(80) ;
+        background: #ccc;
+    }
+    &.popup-btns { border-top: 1px solid #e8e8e8; }
+}
+//实际浮动的按钮
+.popup-solid-btn {
+    border: none;
+    bottom: rem(24);
+    span,a,button {
+        background: $color;
+        color: #fff;
+        width: 94%;
+        margin: 0 3%;
+        border-radius: rem(12);
+    }
+}
+//带表单的样式
+.popup-form {
+    padding: rem(36) 0;
+    .text-tips { padding-top: 0; padding-bottom: 0; color: #333; font-size: rem(30); line-height: rem(54);}
+    .tit { padding-top:rem(6);}
+    .con { padding-top:rem(12); padding-bottom: 0;}
+    input {
+       width: 86.1%;
+       font-size: rem(28);
+       height: rem(36);
+       padding:rem(17) 3%;
+       margin: 0 4%;
+       border: none;
+       border-bottom: 1px solid #e8e8e8;
+       color: #333;
+    }
+    .textarea {
+        width: 86%;
+        margin: rem(24) 4% rem(12);
+        padding:rem(16) 3% 0;
+        border: 1px solid #ccc;
+    }
+    textarea {
+        width: 99.6%;
+        font-size: rem(28);
+        line-height:1.3em;
+        height: 15em;
+        color: #999;
+        border: none;
+    }
+}
+
+//关闭弹窗样式
+.popup-closed {
+   position: absolute;
+   @extend .icon-bg;
+   width: rem(60);
+   height: rem(60);
+   top: rem(18);
+   right: rem(18);
+   text-indent: -9999px;
+   cursor: pointer;
+   background-position: 90% 30%;
+}
+
+//带图标的样式
+.popup-icons {
+    .popup-warp {
+        width: rem(580);
+        margin-left:rem(-290);
+        margin-top: rem(-250);
+        &:before {
+            @extend .after;
+            @extend .icon-bg;
+            width: rem(138);
+            height: rem(138);
+            background-size: 367%;
+            margin: rem(64) auto 0;
+        }
+    }
+    //icon-各类
+    .icon-err:before {
+        background-position:36.67% 100%;
+    }
+    .icon-ok:before {
+        background-position:0% 100%;
+    }
+    .icon-delay:before {
+        background-position:75.13% 100%;
+    }
+    
+    .con {
+        font-size:rem(32);
+        line-height: rem(54);
+        padding: rem(32) rem(24) rem(68);
+        color: #000;
+    }
+}

@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>测试</title>
+<link rel="stylesheet" type="text/css" href="../css/style0728.css">
+<link rel="stylesheet" type="text/css" href="../js/upload-img/webuploader.css" />
+<link rel="stylesheet" type="text/css" href="../js/upload-img/music/photo2.css"  />
+<link rel="stylesheet" type="text/css" href="../css/publicImg.css">
+<style>
+.disNone { display:none;}
+</style>
+</head>
+<div class="container">
+    <div class="top">
+        <a class="back"><i></i>返回</a>
+        <span>上传照片</span>
+        <a class="save uploadBtn">保存</a>
+    </div>
+    <div class="errorWrap">
+        <div class="errorTextBg"></div>
+        <div class="errorText"></div>
+    </div>
+    <div class="bk2">
+        <span class="explain2">
+          请上传照片吧！！！！！！！！！！！！！！！！！！！！
+        </span>
+        <div id="uploader0" class="uploader">
+          <div class="queueList">
+            <ul class="filelist">
+              <li class="btnWrap">
+                <div class="btns">
+                  <div class="filePicker2"></div>
+                  <div class="uploadBtn"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <ul id="otherUpload" class="otherUpload disNone">
+
+
+            <li class="otherBtnUp">
+                <input type="file" name="file" accept="image/*" id="inputUpload">
+                <label for="inputUpload">
+                	请选择需要上传的图片
+                </label>
+            </li>
+        </ul>
+
+
+
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../js/upload-img/webuploader.js"></script>
+<script type="text/javascript" src="../js/upload-img/photo2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.10.1.min.js" ></script>
+<script type="text/javascript" src="../js/upload-img/android444.js"></script>
+<script>
+//单独4.4.4版本点击按钮
+	function postOtherData(){
+		alert('在网页本身点击了');
+
+		//循环获取需要上传的data
+		var getData = new Array;
+		for(var liNum = 0; liNum < $('.addUploadLi').length; liNum++){
+			getData[liNum] = {
+				filePath: $('.addUploadLi').eq(liNum).attr('filePath'),
+				fileType: $('.addUploadLi').eq(liNum).attr('fileType'),
+				fileSize: $('.addUploadLi').eq(liNum).attr('fileSize')
+			}
+		}
+		//拼出需要post的数据
+		postData = {
+			//'userId':<?=Yii::app()->getUser()->getId()?>,
+			//'token':'<?=$session['token']?>',
+			//'accessFrom':'<?= $session['accessFrom']?>',
+			//'<?=$file ?>';:getData
+		}
+		//整个数据拼凑完成，开始发送ajax请求
+		$.ajax({
+			type: 'POST',
+			url: 'http://1742.16.34.30:9321/cgjr/user/update_certifyd.json',
+			data: postData,
+			dataType:'json',
+			success: function(data){
+				if(data.success){
+					alert('chegngong');
+				}else{
+					alert('bu');
+				}
+			}
+		})
+
+	}
+
+
+
+
+
+
+
+
+
+    var swfUrl="../../js/Uploader.swf";
+    jQuery(function () {
+			createUploader('#uploader0',7,5,2,".btnWrap");//第一个参数为7   表示实际可传6张图片
+    });
+    function show(msg,yes){
+        yes = yes || false;
+        var div;
+        if(yes){
+            div = $(".alertBg,.perfectAlert:eq(1)");
+        }else{
+            div = $(".alertBg,.perfectAlert:eq(0)");
+        }
+        $('.alertBg').removeClass('disNone');
+        div.removeClass('disNone').find('.text-18,.red,.bolder').html(msg);
+    }
+
+    var state=false;//有错误
+    $(function(){
+        $(".uploadBtn").bind("click",function(){
+            var text="请选择不大于4M的图片"; //错误提示信息
+            if(!state){
+                $(".errorText").html(text);
+                $(".errorWrap").removeClass("disNone");
+                $(".errorTextBg").animate({"opacity":"0.7"},800);
+                setTimeout("$('.errorTextBg').animate({'opacity':'0'},800);$('.errorWrap').addClass('disNone');$('.errorText').html('');",3000)
+            }
+        })
+    })
+</script>
+</body>
+</html>

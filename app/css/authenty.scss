@@ -1,0 +1,230 @@
+@charset "UTF-8";
+@import '_mixin.scss';
+
+.container { background-color: #e8eaec;}
+.main .img { margin: 40px auto; margin: 1.25rem auto; width: 155px; width: 4.84375rem; height: 155px; height: 4.84375rem; background-color: #3297fd; border-radius: 50%;}
+.main .img_taobao { background-color: #ef512e;}
+.form { font-size: 26px; font-size: 0.8125rem;}
+.form ul { background-color: #fff;}
+.form li { position: relative; margin-left: 4.0625%; padding: 8px 0; padding: 0.25rem 0; border-bottom: 1px solid #c9c9c9;}
+.form li:last-child { border-bottom: none;}
+.form input { border: none; }
+.form label { display: inline-block; width: 140px; width: 4.375rem;}
+.form .inputText { padding: 12px 0; padding: 0.375rem 0; line-height: 1.5em; width: 370px; width: 11.5625rem; font-size: 26px; font-size: 0.8125rem;}
+.form li a { position: absolute; top: 0; right: 0;}
+.form .imgCode { width: 240px; width: 7.5rem;}
+.form .clearBtn { top: 35%; width: 24px; width: 0.75rem; height: 24px; height: 0.75rem; background-size: 2550%;}
+.form .imgCodeBtn { top: 8px; top: 0.25rem; width: 160px; width: 5rem; height: 57px; height: 1.78125rem; border-left: 1px solid #c9c9c9;}
+.form .codeBtn { top: 14px; top: 0.4375rem; right: 30px; right: 0.9375rem; padding: 0 10px; padding: 0 0.3125rem; height: 45px; height: 1.40625rem; line-height: 45px; line-height: 1.40625rem; background-color: #e5e5e5; border-radius: 5px; color: #666; font-size: 22px; font-size: 0.6875rem;}
+.form .codeOk { background-color: #3297fd; color: #fff;}
+.form .pwdBtn { top: 40%; width: 35px; width: 1.09375rem; height: 20px; height: 0.625rem; background-size: 1700%; background-position: 6.5% 0;}
+.form .showPwd { background-position: 23% 0;}
+.form .pwdLi .clearBtn { right: 50px;}
+.form .btn { padding: 0 4.0625%;}
+.form .subBtn { display: block; width: 100%; background: #3297fd; border: none; text-align: center; color: #fff; font-size:32px; font-size:1rem; line-height:72px; height:2.25rem; line-height:2.25rem; border-radius:0.3125rem; -webkit-border-radius:0.3125rem; margin-top:20px; appearance:none; -webkit-appearance:none;}
+.form .subBtn.mT0 { margin-top:0;}
+.form .agreen { display: block; width: 100%; line-height: 80px; line-height: 2.5rem; text-align: center; font-size: 22px; font-size: 0.6875rem; color: #666;}
+.form .agreen a { color: #3297fd;}
+.form .agreen i { display: inline-block; width: 20px; width: 0.625rem; height: 20px; height: 0.625rem; background-size: 3000%; background-position: 12.8% 0; vertical-align: -3px; vertical-align: -0.09375rem;}
+.form .agreen .selectNo { background-position: 17.5% 0;}
+.form .agreen input { -webkit-appearance: none; width: 0; height: 0;}
+
+.alertBk { position: fixed; width:100%; height:100%; background:#000; top:0px; left:0px; _position: absolute; filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity: 0.7;opacity: 0.7; z-index:10000;}
+.alertContent { position: fixed; top: 50%; left: 50%; margin-top: -100px; margin-top: -3.125rem; margin-left: -210px; margin-left: -6.5625rem; width: 420px; width: 13.125rem; height: 200px; height: 6.25rem; _position: absolute; overflow:hidden; z-index:10001; background-color: #fff; border-radius: 5px; font-size: 22px; font-size: 0.6875rem; text-align: center;}
+.alertContent .contentText { padding-top: 13%; }
+.alertContent .alertfFoot { position: absolute; top: 140px; top: 4.375rem; width: 100%; border-top: 1px solid #3297fd;}
+.alertContent .alertfFoot a { display: none; width: 49%; height: 60px; line-height: 60px; height: 1.875rem; line-height: 1.875rem; font-size: 26px; font-size: 0.8125rem; color: #3297fd;}
+.alertContent .alertfFoot .btnShow { display: inline-block;}
+.alertContent .alertfFoot .cancel { border-right: 1px solid #3297fd;}
+
+/*2016-03-02补充 */
+.sendCode{ padding:0 0.5rem; height:1.5rem; cursor:pointer;font-size:0.6875rem;text-align:center;line-height:1.5rem;position:absolute;right:0.875rem;top:0.375rem;color: #fff;border-radius:0.125rem;}
+.yzCode{width:6.25rem;height:1.625rem;float: right; top: 0.375rem;right:0;position:absolute;line-height: 1.625rem;text-align: center;border-left: 1px solid #E5E5E5; overflow: hidden;}
+.noClick{background-color: #DCDCDC;}
+.canClick{background-color: #3297FD;}
+.fillOk { padding:0 20px 20px; padding:0 0.625rem 0.625rem; line-height:1.5;}
+
+/*2016-04-18修改 */
+.explain{width: 100%;text-align: center;font-size: 22px;font-size:0.6875rem;margin:20px 0 0;margin:0.625rem 0 0;color: #666;}
+
+/*2016-06-21修改——运营商验证 */
+.mobileCon .form ul {margin-bottom: 0;}
+.mobileCon .inputError{font-size: 22px; color: #f33; font-size: 0.6875rem; line-height:0.9375rem; text-indent: 26px;text-indent: 0.8125rem; padding:10px 0;  }
+.mobileCon .fillOk{font-size: 26px;font-size: 0.8125rem;color: #333;line-height: 1rem;padding: 16px 20px;padding: 0.5rem 0.625rem;}
+.mobileCon .longInput {width: 100%;}
+
+.disNone{display: none;}
+.alertCon{width:12.1875rem;height:6.4375rem;background-color:#fff;text-align: center;position: fixed;top:50%;left: 50%;margin-top:-2.71875rem;margin-left:-6.09375rem;border-radius: 0.3125rem;z-index: 10002;color: #333;font-size: 0.75rem;}
+.alertCon i{display: inline-block;margin:20px 0 14px;margin:0.625rem 0 0.4375rem;;width:2.5rem;height:2.5rem;background: url("file:///C|/Users/Administrator/img/publicIcon.png") center no-repeat;background-size: 550%;background-position: 0% 100%;}
+.alertCon .congratulation { font-size: 26px;font-size: 0.8125rem;color: #333;}
+
+/* 20160908新增运营商认证五种弹窗 */
+.alertTips {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    overflow: hidden;
+    .alertTipsCon {
+        @include point(width,470);
+        position:fixed;
+        bottom: 50%;
+        left: 50%;
+        background: #fff;
+        @include point(border-radius,10);
+        @include box(margin,0,0,-100,-235);
+        @include point(padding-top,26);
+        .title {
+            @include box(padding,0,40);
+            @include point(font-size,28);
+            @include point(line-height,34);
+            font-weight:500;
+            
+        }
+        .txCenter { text-align: center;}
+        .alertBtns {
+            @include point(margin-top,30);
+            border-top: 1px solid #e8e8e8;
+            &.twoBtn {
+                a,span,button { width: 49.9%; float: left;}
+            } 
+            a,span,button {
+                display: block;
+                width: 100%;
+                @include point(font-size,28);
+                @include point(line-height,72);
+                text-align: center;
+                color: $blue;
+                font-family: "microsoft yahei";
+                background: no-repeat;
+                border: 0;
+                cursor: pointer;
+            }
+            .bold {
+                font-weight: 500;
+            }
+            .line {
+                position: relative;
+                &:after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 1px;
+                    height: 100%;
+                    background: #e8e8e8;
+                }
+            }
+        }
+        .forms {
+            @include box(padding,0,30);
+            li {
+                @include point(margin-top,18);
+                @include point(font-size,24);
+                overflow: hidden;
+                input {
+                    float: left;
+                    @include point(font-size,24);
+                    @include box(padding,20,0);
+                    @include point(height,30);
+                    @include point(text-indent,12); 
+                    @include point(border-radius,8); 
+                    border: 1px solid #ddd;
+                    &::-webkit-input-placeholder { color:#ccc;}
+                }
+                &.liWarp {
+                    border: 1px solid #ddd;
+                    @include point(height,70);
+                    @include point(border-radius,8);                    
+                }
+                .inputType1 {
+                    width: 57%;
+                    padding-right: 3%;
+                }
+                .inputType2 {
+                    width: 58%;
+                    border: 0;
+                }
+                .inputType3 {
+                    width: 97%;
+                    border: 0;
+                }
+                .checkImg {
+                    width: 36%;
+                    @include box(margin,5,5,0,0);
+                    &,& img {
+                        float: right;
+                        @include point(height,60);
+                    }
+                    & img { width: 100%;}
+                }
+                .checkCode {
+                    float: right;
+                    width: 36%;
+                    @include point(height,72);
+                    @include point(line-height,72);
+                    text-align: center;
+                    overflow: hidden;
+                    color: #fff;
+                    background: $blue;
+                    @include point(border-radius,9);
+                   &.gray { background: #ccc;}
+                }
+            }
+        }
+    }
+}
+
+//20160913-dialog会话-后期可做为通用样式
+.dialogBg { position: fixed; z-index: 100000; width:100%; height: 100%; top: 0; left: 0; background: transparent;}
+.dialog {
+    @include point(width,270);
+    @include point(height,124);
+    @include point(font-size,28);
+    position:fixed;
+    z-index: 99999;
+    top: 50%;
+    left: 50%;
+    @include box(margin,-82,0,0,-135);
+    @include box(padding,20,0);
+    background-color: rgba(0,0,0,0.8);
+    @include point(border-radius,10);
+    text-align: center;
+    color: #fff;
+    opacity: 1;
+    transition: all 0.2s;
+    &:before {
+        display: block;
+        content: '';
+        @include point(width,50);
+        @include point(height,50);
+        @include box(margin,12,auto,5);
+        background:url(../img/addIcon0913.png) no-repeat;
+        background-size: 600%;
+        //background-position: -999em -999em;
+    }
+    &.false:before {
+        background-position:20% 0;
+    }
+    &.true:before {
+        background-position:0 0%;
+    }
+    &.text:before,&.sort:before { display:none; }
+    &.text,&.sort {
+        @include point(width,492);
+        @include box(margin,-56,0,0,-246);
+        @include point(padding-top,16);
+        height:auto;
+    }
+    &.sort {
+        @include point(width,270);
+        @include point(margin-left,-135);
+    }
+    
+    &.hide {
+        opacity: 0;
+    }
+}

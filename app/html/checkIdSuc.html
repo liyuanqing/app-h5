@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>草根金融-身份认证成功提示页</title>
+  <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+  <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+  <meta HTTP-EQUIV="expires" CONTENT="0">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <meta name="format-detection" content="telephone=no" />  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="pragram" content="no-cache" />
+  <meta name="screen-orientation" content="portrait">
+  <meta name="x5-orientation" content="portrait">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="../css/style0728.css">
+  <link rel="stylesheet" type="text/css" href="../css/checkIdcard.css">
+</head>
+<body>
+<div class="container">
+  <div class="top">
+    <span>身份认证</span>
+  </div>
+  <div class="main">
+	<div class="sucCheck">
+    	<i></i>
+		<p class="tit">恭喜您,身份认证成功! </p>
+        <p class="con"><span id="timeSkip">4</span>秒后自动跳转到信用页面</p>    
+    </div>
+  </div>
+</div>
+<script src="../js/jquery-1.10.1.min.js"></script>
+<script>
+	//倒计时10S跳转
+	function lxfEndtime(){
+		$t=$('#timeSkip').html();
+		if($t!=0){
+			$('#timeSkip').html($t-1);
+			$i=setTimeout("lxfEndtime()",1000);
+			if( $('#timeSkip').html() == 0 ){
+				window.open('creditIndex.html','_self');
+			}
+		}
+	}
+	//lxfEndtime();
+</script>
+</body>
+</html>

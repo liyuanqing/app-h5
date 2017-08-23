@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>草根金融——个人征信证明</title>
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../css/style0728.css">
+    <link rel="stylesheet" type="text/css" href="../js/upload-img/webuploader.css" />
+    <link rel="stylesheet" type="text/css" href="../js/upload-img/music/photo2.css"  />
+    <link rel="stylesheet" type="text/css" href="../css/publicImg.css">
+</head>
+<body class="app">
+<div class="container">
+    <div class="top">
+        <a class="back" href="javascript:;"><i></i>返回</a>
+        <span>个人征信证明</span>
+        <a href="javascript:" class="save uploadBtn">保存</a>
+    </div>
+    <div class="errorWrap">
+        <div class="errorTextBg"></div>
+        <div class="errorText"></div>
+    </div>
+    <div class="bk2">
+        <span class="explain2">您可在中国人民银行征信中心进行查询（网址https://ipcrs.pbccrc.org.cn），并将查询获得的PDF文件上传</span>
+        <div id="uploader0" class="uploader">
+            <div class="queueList">
+                <ul class="filelist">
+                    <li class="btnWrap">
+                        <div class="btns">
+                            <div class="filePicker2"></div>
+                            <div class="uploadBtn"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../js/upload-img/webuploader.js"></script>
+<script type="text/javascript" src="../js/upload-img/photo2.js"></script>
+<script>
+    var swfUrl="../../js/Uploader.swf";
+    jQuery(function(){
+        createUploader('#uploader0',7,5,2,".btnWrap");//第一个参数为7   表示实际可传6张图片
+    });
+    function show(msg,yes){
+        yes = yes || false;
+        var div;
+        if(yes){
+            div = $(".alertBg,.perfectAlert:eq(1)");
+        }else{
+            div = $(".alertBg,.perfectAlert:eq(0)");
+        }
+        $('.alertBg').removeClass('disNone');
+        div.removeClass('disNone').find('.text-18,.red,.bolder').html(msg);
+    }
+
+    var state=false;//有错误
+    $(function(){
+        $(".uploadBtn").bind("click",function(){
+            var text="请选择不大于4M的图片"; //错误提示信息
+            if(!state){
+                $(".errorText").html(text);
+                $(".errorWrap").removeClass("disNone");
+                $(".errorTextBg").animate({"opacity":"0.7"},800);
+                setTimeout("$('.errorTextBg').animate({'opacity':'0'},800);$('.errorWrap').addClass('disNone');$('.errorText').html('');",3000)
+            }
+        })
+    })
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>
+</body>
+</html>

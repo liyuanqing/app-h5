@@ -1,0 +1,83 @@
+.container{background-color: #E8EAEC;color: #333;padding-bottom: 170px;padding-bottom: 5.3125rem;overflow: hidden;}
+.arrow,.userImg,.myIcon,.member .nameIcon,.member .levelIcon{background: url("../img/publicIcon.png") center no-repeat;}
+
+.bk1,.bk2{border-bottom: 1px solid #DFDFDF;background-color: #fff;}
+.bk1{height:110px;height:3.4375rem;padding:0.625rem 0.3125rem;}
+.userImg{width:100px;height:100px;width:3.125rem;height:3.125rem;float:left;margin:5px 0 0 12px;margin:0.15625rem 0 0 0.375rem;}
+.userImg{background-position: 0.125% 25.75%;background-size: 758%;}
+.userName{width:74.5%;float:right;font-size: 0.6875rem;line-height: 1rem;}
+.telNum{color: #999;}
+.hello{font-size: 0.875rem;}
+
+.member{width:74.5%;float:right;font-size: 22px;font-size: 0.6875rem;color: #999;margin-top: 10px;margin-top: 0.3125rem;}
+.member >div{float: left;position: relative;}
+.member .levelWrap{width:26%;padding-left: 32px;padding-left: 1rem;}
+.member .nameWrap{padding-left:42px;padding-left: 1.3125rem;}
+.member .nameIcon,.member .levelIcon{width:40px;height:30px;width:1.25rem;height:0.9375rem;background-size: 1500%;position: absolute;bottom:36%;left:0%;margin-bottom: -0.3125rem;}
+.member .nameIcon{background-position: 77% 29.75%;}
+.member .levelIcon{background-position: 78% 23.5%;}
+
+.bk2{height:80px;height:2.5rem;padding:0.3125rem;}
+.bk2 div{width:49%;text-align: center;font-size: 0.8125rem;float: left;line-height: 1.25rem;margin-bottom: 0.625rem;}
+.borderL{border-left: 1px solid #DFDFDF;}
+.prominent{font-size: 1rem;color: #3297fd;}
+
+.bk3{background-color: #fff;font-size: 0.875rem;padding-left: 0.46875rem;border-top: 1px solid #DFDFDF;border-bottom: 1px solid #DFDFDF;margin-top: 0.625rem;}
+.record li{line-height: 2.3125rem;}
+.record li a.myLink{width:100%;display:block;}
+.borderTB{border-top: 1px solid #DFDFDF;border-bottom: 1px solid #DFDFDF;}
+.borderT{border-top: 1px solid #DFDFDF;}
+.myIcon{width:1.40625rem;height:1.40625rem;float: left;margin-top: 0.4375rem;margin-right: 0.625rem;}
+.icon1{background-position: -0.35% 7.5%;background-size: 1400%;}
+.icon2{background-position: 12% 7.5%;background-size: 1400%;}
+.icon3{background-position: 21.85% 7.5%;background-size: 1400%;}
+.icon4{background-position: 34.75% 16%;background-size: 1400%;}
+.icon5{background-position: 45.5% 16%;background-size: 1500%;}
+.arrow{display:block;width:0.625rem;height:0.9375rem;float: right;margin-top:0.75rem;margin-right: 1.25rem;background-position: 39.6% 0;background-size: 4000%;}
+
+.container .myExit{margin-top:0.625rem;font-size: 0.875rem;color: #333;display: block;width:100%;background-color: #fff;height:74px;height:2.3125rem;line-height: 2.3125rem;text-align: center;}
+.myExit:hover{text-decoration: none;color: #333;}
+
+
+/*2016-05-05修改 ——增加“我的还款”入口*/
+.icon6{background-position: 57.5% 85%;background-size: 1500%;}
+.bk3 .record li.specialLi{width: 20rem;background-color: #e8eaec;margin-left: -0.46875rem;height: 20px;height: 0.625rem;}
+
+/*2016-05-19修改 ——增加“意见反馈”入口*/
+.icon7{background-position: 58% 95.5%;background-size: 1400%;}
+
+
+/*2016-06-21修改 ——增加“我的银行卡”入口*/
+.icon8{background-position: 77% -1.5%;background-size: 1400%;}
+
+/* 20160723新增弹出框 */
+.alertBg2{width:100%;height:100%;background-color: #000;opacity: 0.7;position: fixed;top:0;left: 0;z-index: 20160;}
+.alertCon2{width:13.4375rem; padding-bottom:2.625rem; font-family:"微软雅黑";background-color:#fff;position: fixed;top:50%;left: 50%;margin-top: -3.0625rem;margin-left: -6.71875rem;border-radius: 0.3125rem;z-index: 20160;}
+.alertCon2 .alertH { font-size:0.75rem; padding-top:0.75rem; text-align:center; font-weight:bold;}
+.alertCon2 .alertC{ line-height:1.5; color: #333;font-size: 0.6875rem; padding:20px 20px 0; padding:0.625rem 0.625rem 0;}
+.sure{width:100%;height:2rem;font-family:"微软雅黑";position:absolute;bottom:0;cursor:pointer;line-height: 2rem;border-top:1px solid #3297fd;color: #3297fd;font-size: 0.8125rem;text-align: center;}
+.sure a:-webkit-any-link {color: #3297fd;}
+
+/*********** 20160728新增样式--将图标改为ttf的 ****************/
+/*
+.record li a.myLink { position:relative;}
+.container .myIcon:after { line-height:2.3125rem; background:#fff; position:absolute; top:0; left:0; padding:0 0.25rem 0 0.09rem; font-family:'icons'; font-size:1.25rem; color:#3297fd; }
+.myIcon.icon1:after { content:'\E654';}
+.myIcon.icon2:after { content:'\E632';}
+.myIcon.icon3:after { content:'\E';}
+.myIcon.icon4:after { content:'\E';}
+.myIcon.icon5:after { content:'\E6aa';}
+.myIcon.icon6:after { content:'\E628';}
+.myIcon.icon7:after { content:'\E';}
+.myIcon.icon8:after { content:'\E619';}
+.myIcon.icon9:after { content:'\E';}
+.myIcon.icon10:after { content:'\E';}
+.myIcon.icon11:after { content:'\E';}
+.myIcon.icon12:after { content:'\E';}
+*/
+/* 201014新增提示自动还款弹窗--我的贷款、我的还款两个点击时 */
+.alertBg3 { width: 100%; height: 100%; background: rgba(0,0,0,0.7); position: fixed; top: 0; left: 0; z-index: 999;}
+.alertCon3 { width: 548px; width:17.125rem ; position: fixed; top: 50%; left: 50%; z-index: 1000; margin: -4.15rem 0 0 -8.5625rem; background: #fff; border-radius: 0.3125rem;}
+.alertCon3 .alertC { padding: 1rem 1.125rem 0.875rem; line-height: 1.125rem; font-size: 0.875rem; text-align: justify;}
+.alertCon3 .btns { height:2.5rem; border-top: 1px solid #e8e8e8; font-size: 0.875rem;}
+.alertCon3 .oneBtn { display: block; line-height: 2.5rem; text-align: center; color: #3297fd;}

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import '../_mixin.scss';
+.allowBanner img { display:block; width:100%;}
+.contentDl {
+    @include point(padding-bottom,100);
+    dl {
+      @include box(padding,8,35,32); 
+      @include point(font-size,28); 
+      @include point(line-height,36); 
+      color: #666;
+      .blue { color: #2f7eff;}
+      dt {
+          font-weight: bold;
+          @extend .blue;
+          @include point(padding-bottom,12); 
+          .icon {
+              float: left;
+              @include point(width,36); 
+              @include point(height,36); 
+              text-align: center;
+              color: #fff;
+              @include point(border-radius,5); 
+              background: #2f7eff;
+              @include point(font-size,22);
+              font-family: arial;
+              font-weight: normal; 
+              overflow: hidden;
+              white-space: nowrap;
+              @include point(margin-right,12); 
+          }
+      }
+    }
+}

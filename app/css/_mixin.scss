@@ -1,0 +1,46 @@
+//rem(val)
+@function rem($val){ @return ($val/32)+rem; }
+//check rem(val)
+@function checkRem($val){ @if $val == auto{ @return auto; }@else if $val==0{ @return 0; }@else{ @return rem($val); }}
+//check px(val)
+@function checkPx($val){ @if $val == auto{ @return auto; }@else if $val==0{ @return 0; }@else{ @return $val+px; } }
+//@mixin radius(val)
+@mixin radius($val){
+    border-radius:checkRem($val);
+    -webkit-border-radius:checkRem($val);
+}
+//@mixin box(attr,t,r,b,l)
+@mixin box($box,$t,$r:$t,$b:$t,$l:$r){ 
+    //#{$box}: checkPx($t) checkPx($l) checkPx($b) checkPx($l);
+    #{$box}:checkRem($t) checkRem($r) checkRem($b) checkRem($l);
+}
+//@mixin point(attr,val)
+@mixin point($poi,$val){
+    //#{$poi}:checkPx($val);
+    #{$poi}:checkRem($val);
+}
+//@mixin icons
+@mixin icons { display: block; font-family: 'icons';}
+
+//colors
+$blue:#3297fd;
+$red:#f33;
+$fff:#fff;
+
+//iconFonts
+$iconBack:'\e689';
+$icoClear:'\e642';
+$icoEye1:'\e669';
+$icoEye2:'\e61b';
+$iconLevel:'\e601';
+$iconName:'\e684';
+$iconJiekuan:'\E654';
+$iconHuankuan:'\E628';
+$iconJiangli:'\E6AA';
+$iconHelp:'\E633';
+$iconYijian:'\E63B';
+$iconAbout:'\E645';
+$iconArrowR:'\E61D';
+$iconFindfile: '\e647';
+$iconSuccess: '\e64a';
+$iconTicket:'\e620';

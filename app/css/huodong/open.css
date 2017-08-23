@@ -1,0 +1,76 @@
+.container { background: #fbf5c8;}
+.disNone { display: none;}
+.bk { position: relative;}
+.content { position: absolute; top: 0; left: 6.25%; width: 87.5%;}
+.text h4, i,.container a { background: url(../../img/huodong/open/icon.png) no-repeat;}
+p { line-height: 1.8em; font-size: 20px; font-size: 0.625rem; color: #000;}
+.container i { position: absolute; top: 0; left: 50%; margin-left: -65px; margin-left: -2.03125rem; width: 130px; width: 4.0625rem; height: 150px; height: 4.6875rem; background-size: 380%; background-position: 0 43%;}
+em { color: #d3242f;}
+.container a { display: block; margin: 0 auto; width: 212px; width: 6.625rem; height: 60px; height: 1.875rem; line-height: 58px; line-height: 1.8125rem; background-size: 230%; background-position: 54.5% 80%; font-size: 26px; font-size: 0.8125rem; color: #d5460e; text-align: center;}
+.bk2 p { padding-left: 41%;  color: #d3242f;}
+.text { padding-top: 44px; padding-top: 1.375rem;}
+.text h4 { margin: 0 auto; width: 490px; width: 15.3125rem; height: 150px; height: 4.6875rem; line-height: 83px; line-height: 2.59375rem; background-size: 100%; font-size: 35px; font-size: 1.09375rem; color: #fbf5c8; font-weight: bold; text-align: center;}
+
+.bk3 .content { height: 100%;}
+.bk3 i { top: -8%;}
+.bk3 p { padding: 25% 0 4%;}
+.bk4 i { top: -70px; top: -2.1875rem; background-position: 42% 43%;}
+.bk4 .p1 { padding: 15% 0 4%;}
+.erweima { position: relative;}
+.erweima p { width: 58.928571%;}
+.erweima .imgNotice { position: absolute; top: -32px; top: -1rem; right: 0; width: 204px; width: 6.375rem;}
+.erweima .imgNotice .img { padding: 16px; padding: 0.5rem; height: 170px; height: 5.3125rem; background-color: #fff; border: 1px solid #fff;}
+.erweima .textNotice { line-height: 2em; font-size: 14px; font-size: 0.4375em; color: #d3242f;}
+.erweima .loginNotice { display: none; height: 170px; height: 5.3125rem; line-height: 170px; line-height: 5.3125rem; text-align: center; color: #d3242f; font-size: 20px; font-size: 0.625rem;}
+.noLogin .loginNotice { display: block;}
+.erweima .noLogin .img { background-color: transparent; border: 1px dashed #000; }
+.noLogin .img img { display: none;}
+
+.table { padding: 20% 0 5%; font-size: 18px; font-size: 0.5625rem; color: #010101;}
+.table thead th { line-height: 40px; line-height: 1.25rem; background-color: #d3242f; border: 1px solid #d3242f; font-size: 22px; font-size: 0.6875rem; font-weight: bold; color: #fbf5c8;}
+.table table { width: 100%; border-spacing: 1px; border-collapse: collapse; text-align: center;}
+.table th, .table td { border: 1px solid #d3242f; } 
+.table th { font-weight: normal;}
+
+.bk5 i { top: -65px; top: -2.03125rem; background-position: 83% 43%;}
+.bk5 .p1 { padding: 15% 0 5%;}
+.bk5 .p2 { line-height: 40px; line-height: 1.25rem; background-color: #d3242f; font-size: 22px; font-size: 0.6875rem; font-weight: bold; color: #fbf5c8; text-align: center;}
+.bk5 .p3 { padding: 5% 0 10%;}
+.bk5 .erweima { padding-bottom: 10%;}
+.bk5 .textNotice { text-align: center;}
+.bk5 .noLogin .textNotice { display: none;}
+
+.bk6 i { top: -70px; top: -2.1875rem; background-position: 0 99%;}
+.bk6 .p1 { padding: 13% 0 5%; }
+.bk6 .table { padding: 0;}
+
+.bk7 { margin: 0 auto; width: 87.5%; font-size: 18px; font-size: 0.5625rem; color: #000;}
+dt { font-size: 22px; font-size: 0.6875rem; color: #d3242f; font-weight: bold;}
+dt, dd { line-height: 1.8em;}
+.bk7 p { padding: 10% 0; text-align: center; font-size: 16px; font-size: 0.5rem; color: #525151;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+.container{background-color: #e8eaec;}
+.liCon li span,.titleName span{display: block;float: left;}
+.list1{width:26.875%;margin-left: 20px;margin-left: 0.625rem;}
+.list2{width:33.125%;}
+.list3{width:25.3125%;}
+.list4{width:8.4375%;}
+
+.titleName{width:100%;height:50px;height:1.5625rem;line-height: 1.5625rem;font-size: 22px;font-size: 0.6875rem;color: #666;}
+
+.liCon{width:100%;}
+.liCon li{width:100%;height:76px;height:2.375rem;background-color: #fff;line-height:76px;line-height:2.375rem;font-size: 22px;font-size: 0.6875rem;color: #666;
+          border-top:1px solid #DEDEDE;}
+.liCon li a{color: #3297fd;text-decoration: underline;}
+.liCon li a:hover{color: #3297fd;text-decoration: underline;}
+.main .loading{display: block;width:100%;height:74px;height:2.3125rem;line-height: 74px;line-height: 2.3125rem;font-size: 26px;font-size: 0.8125rem;
+                 text-align: center;background-color: #fff;color: #999;margin-top: 20px;margin-top: 0.625rem;}
+.main .loading:hover{color: #999;text-decoration: underline;}

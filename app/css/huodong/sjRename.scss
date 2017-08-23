@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@import '../_mixin.scss';
+
+.sjBanner img { display:block; width:100%;}
+.container { background: #266dff; overflow: hidden; }
+.sjContent {
+    @include box(margin,24,30,46);
+    @include box(padding,12,24,18);
+    @include point(font-size,24);
+    text-align:justify;
+    box-shadow: 0px 3px 5px #154fc5;
+    line-height: 2.1em;
+    background: #fff;
+    @include radius(10);
+    overflow: hidden;
+    .ctit { @include point(font-size,28); line-height: 2.9em; font-weight: bold; @include point(padding-bottom,6); }
+    .cbot { float:right; line-height: 1.5em; @include point(padding-top,30); text-align: center; width: 9.2em;}
+}

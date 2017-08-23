@@ -1,0 +1,33 @@
+.container{background-color: #e8eaec;}
+.main{color: #333;}
+.navWrap{width:100%;background-color:#fff;margin-bottom: 20px;margin-bottom: 0.625rem;}
+.mainNav{width:93.75%;height:2.375rem;margin:0 auto;font-size: 26px;font-size: 0.8125rem;font-weight: bold;}
+.mainNav li{width:33.33%;text-align: center;float: left;background-color: #fff;}
+.mainNav li a{display:block;width:90px;width:2.8125rem;line-height:74px;line-height:2.3125rem;margin:0 auto;}
+.mainNav li a.selected{border-bottom:3px solid #3297fd;}
+
+.prize{width:93.75%;margin:0 auto;}
+.prize li{width:100%;height:164px;height:5.125rem;background: url("../img/prizeBg.png") center no-repeat; background-size: 100%;margin-bottom: 0.625rem;}
+.prizeNum{width:30%;height:94px;height:2.9375rem;line-height:2.9375rem;margin:40px 0 0 20px;margin:1.25rem 0 0 0.625rem;border-right: 2px dashed #ccc;float: left;}
+.prizeCon{width:63%;height:94px;height:2.9375rem;float: right;margin-top:32px;margin-top:1rem;font-size: 24px;font-size: 0.75rem;line-height:50px;line-height:1.5625rem;font-weight: normal;}
+/*未使用 */
+.prizeOk li{background-position: 0% 70%;background-color: #fff;}
+.prizeOk .red{font-size: 72px;font-size:2.25rem;font-weight: bold;color: #f66;}
+.prizeOk .text22{font-size: 22px;font-size: 0.6875rem;font-weight: normal;color: #f66;}
+.prizeOk .text18{font-size: 18px;font-size: 0.5625rem;color: #999;line-height: 26px;line-height: 0.8125rem;}
+
+/*已使用 */
+.prizeHas li{background-position: 0% 0.25%;background-color: #999;}
+.prizeHas,.prizeMiss{font-size: 72px;font-size:2.25rem;font-weight: bold;color: #fff;}
+.prizeHas .text22,.prizeMiss .text22{font-size: 22px;font-size: 0.6875rem;font-weight: normal;}
+.prizeHas .text18,.prizeMiss .text18{font-size: 18px;font-size: 0.5625rem;line-height: 28px;line-height: 0.875rem;}
+
+
+/*已失效 */
+.prizeMiss li{background-position: 0% 33.75%;background-color: #999;}
+
+
+/*暂无抵用券  */
+.noPrize{width:230px;height:260px;width:7.1875rem;height:8.125rem;margin:160px auto;margin:5rem auto;background: url("../img/prizeBg.png") center no-repeat;
+          background-size: 260%;background-position: -0.5% 108%;line-height: 380px;line-height: 11.875rem;text-align: center;font-size: 24px;font-size: 0.75rem;color: #666;
+          font-weight: bold;}

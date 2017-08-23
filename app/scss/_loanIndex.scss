@@ -1,0 +1,260 @@
+@charset "UTF-8";
+
+.loan-list {
+    //loan首页需要放foot-bar,需要向下空出foot-bar高度
+    padding-bottom: rem(124);
+    width:100%;
+    height:100%;
+    .bg-gradient{
+        width:100%;
+        height:rem(392);
+        @extend .gradient;
+        padding-top: rem(36);
+        margin-top:rem(-18);
+    }
+    .index-list{
+        height: rem(230);
+        background:#0a65fb;
+        border-radius: rem(10);
+        margin: 0 rem(24);
+        display: -webkit-flex;
+        position: relative;
+        li{
+            -webkit-felx-grow:1;
+            width:50%;
+            text-align: center;
+            font-size:rem(60);
+            font-weight: bold;
+            line-height: rem(200);
+            position: relative;
+            color:#fff;
+        }
+//      li:nth-of-type(2){
+//          padding-left: rem(95);
+//      }
+        li:first-child:after{
+            content: "";
+            width:1px;
+            height:rem(85);
+            background:#7eabf6;
+            display: block;
+            position: absolute;
+            top:34%;
+            right:0; 
+        }
+        p{
+            height: rem(34);
+        }
+        b{
+            font-weight: normal;
+            font-size: rem(24);
+            position: absolute;
+            top: -5%;
+        }
+        i { font-weight: normal; font-style: normal;}
+        small{
+            font-size: rem(24);
+        }
+    }
+    .list-ul{
+        margin: rem(-138) 0 0 rem(24);
+        display: -webkit-flex;
+        li{
+            -webkit-flex-grow:1;
+            width:rem(338);
+            height:rem(796);
+            background:#fff;
+            box-shadow:0 0 rem(40) rem(6) rgba(50,127,253,0.1);
+            border-radius: rem(10);
+        }
+        li:nth-of-type(2){
+            margin:0 rem(24);
+        }
+        
+        img{
+            width:100%;
+            height:rem(420);
+            display: block;
+            border-radius: rem(10) rem(10) 0 0;
+        }
+        p{
+            font-size:rem(42);
+            font-weight: bold;
+            height: rem(60);
+            text-align: center;
+            padding-top: rem(20);
+            color:#000000;
+        }
+        span{
+            font-size:rem(24);
+            color:#959595;
+            height: rem(72);
+            display: block;
+            padding-left: rem(50);
+            text-align: center;
+            width:70%;
+        }
+        button{
+            display: block;
+            width:rem(246);
+            height: rem(70);
+            @extend .gradient;
+            border-radius: rem(40);
+            color:#fff;
+            font-size:rem(28);
+            margin: rem(106) auto 0;
+            box-shadow: 0px 8px 15px 2px #c3defe;
+        }
+    }  
+}
+
+//20170712首页改版样式
+.loan-body {
+    background: #f9f9f9;
+    &.ios-body .ios-div { display: none;}
+    &:after {
+        display: none;
+    }
+}
+.banner-scroll {
+   position:absolute;
+   z-index: 5;
+   top:0px;
+   width: 100%;
+   overflow: hidden;
+   ul {
+       position: relative;
+       z-index: -1;
+       width:9999px;
+       li {
+           width: rem(750);
+           float: left;
+       }
+       img {
+           width: 100%;
+       }
+   }
+   ol {
+       position: absolute;
+       width: 100%;
+       text-align: center;
+       top:rem(406);
+       li {
+           display: inline-block;
+           width: rem(20);
+           height: rem(4);
+           border-radius: 2px;
+           background: #fff;
+           opacity: 0.5;
+           text-indent: -999em;
+           margin: 0 rem(5);
+       }
+       .on {
+           opacity: 1;
+       }
+   }
+}
+.loan-index-content {
+    overflow: hidden;
+    position:relative;
+    z-index: 6;
+    height:rem(720);
+    margin: rem(340) rem(25) 0;
+    background-color: #fff;
+    background: url(../img/loan-index-bg0712.png) no-repeat bottom right / 95%,
+                linear-gradient(-180deg, #ffffff 0%, #fffcfc 100%);
+    box-shadow:0 0 rem(10) 0 rgba(0,0,0,0.06);
+    border-radius:rem(16);
+    .label {
+        position: absolute;
+        left: 0;
+        top: rem(36);
+        background:#ea4234;
+        border-radius:0 100px 100px 0;
+        width:rem(60);
+        height:rem(32);
+        overflow:hidden;
+        &:after {
+            position: absolute;
+            display: block;
+            content: '';
+            width: rem(16);
+            height: rem(16);
+            background:#ffc6c1;
+            border-radius:100%;
+            right: rem(10);
+            top: 50%;
+            margin-top: rem(-8);
+        }
+    }
+    h2 {
+        font-size: rem(32);
+        line-height: rem(44);
+        margin-top: rem(30);
+        text-indent: rem(78);
+    }
+    .index-btn {
+        position:absolute;
+        bottom: rem(92);
+        left: 50%;
+        margin-left: rem(-220);
+        width:rem(440);
+        height:rem(88);
+        color: #fff;
+        background-image:linear-gradient(-187deg, #3896f5 0%, #46acfb 98%);
+        box-shadow:0 rem(6) rem(8) 0 rgba(56,150,245,0.30);
+        border-radius:rem(100);
+        cursor: pointer;
+    }
+}
+.loan-index-content-ul {
+    overflow: hidden;
+    padding: 0 rem(24);
+     li {
+         float: left;
+         width: 50%;
+         font-size: rem(30);
+         text-align: center;
+         margin-top: rem(70);
+         line-height: rem(44);
+     }  
+     span {
+         display: block;
+         width: rem(70);
+         height: rem(70);
+         border-radius: 100%;
+         border:1px solid #ffa300;
+         margin: 0 auto rem(16);
+         &:after {
+             content: '';
+             @extend .icon-bg;
+             width: rem(60);
+             height: rem(60);
+             top: 50%;
+             left: 50%;
+             margin: rem(-30) 0 0 rem(-30);
+         }
+     }
+     .icon1:after {background-position: 10% 40%;}
+     .icon2:after {background-position: 20% 40%;}
+     .icon3:after {background-position: 30% 40%;}
+     .icon4:after {background-position: 40% 40%;}
+}
+.loan-index-foot {
+    font-size: rem(26);
+    line-height: rem(36);
+    color:#bebebe;
+    text-align: center;
+    padding: rem(33) 0;
+    &:after,&:before {
+        content: '';
+        display:inline-block;
+        vertical-align: middle;
+        width: rem(54);
+        height: 1px;
+        background:#ccc;
+        margin: 0 12px;
+        position: relative;
+        top: -1px;
+    }
+}

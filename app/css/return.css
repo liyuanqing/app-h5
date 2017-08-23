@@ -1,0 +1,14 @@
+.return{background-color:#e8eaec;overflow: hidden;font-size: 26px;font-size: 0.8125rem;color: #333;}
+.return .sideL{width:38%;float: left;}
+.return .sideR{width:62%;float: right;}
+
+.return .bk1,.return .bk2 ul li{background-color: #fff;padding:0 20px;padding:0 0.625rem;line-height: 72px;line-height: 2.25rem;}
+.return .bk1 .sideR input{width: 100%;height:72px;height:2.25rem;border: none;font-size: 26px;font-size: 0.8125rem;color: #333;}
+
+.return .bk2{margin-top: 20px;margin-top:0.625rem; }
+.return .bk2 ul li.borderB{border-bottom: 1px solid #E8EAEC;}
+.return .bk2 .sideR img{width: 46px;width: 1.4375rem;height:46px;height:1.4375rem;margin-right: 18px;margin-right: 0.5625rem;margin-top: -4px;margin-top: -0.125rem;}
+
+.return .bk2 .limit{font-size: 18px;font-size: 0.5625rem;text-align: center; padding:20px 0; padding:0.65rem 0;}
+.return .bk2 button{display: block; font-family:"微软雅黑"; border:none; width: 93.75%; background-color: #3297fd; color: #fff;text-align: center; font-size:32px; font-size:1rem; line-height:72px; height:2.25rem; line-height:2.25rem; border-radius:0.3125rem; -webkit-border-radius:0.3125rem; margin:0 auto; }
+/*.return .bk2 a:hover{color: #fff;text-decoration: none;}*/ 

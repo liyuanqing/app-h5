@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>草根金融－微额借货</title>
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../css/style0728.css">
+    <link rel="stylesheet" type="text/css" href="../css/loanMicro.css" />
+</head>
+<body>
+<div class="container">
+	<div class="top">
+        <a class="back" href="javascript:;"><i></i>返回</a>
+        <span>宋江贷-微额贷款</span>
+    </div>
+    <div class="loanCon">
+    	<p class="edu">申请额度(元)：<b class="sqed">500</b></p>
+    	<div class="loanInfo">
+    		<p class="fl">
+    			<span class="em6">年化利息:</span><b class="nhlx">0.67</b><br>
+    			<span class="em6">期初服务费:</span><b class="qcfwf">45</b>
+    		</p>
+    		<p class="em9">
+    			<span class="em5">到账金额：</span><b class="dzje">455</b><br>
+    			<span class="em5">还款金额：</span><b class="hkje">500.67</b>
+    		</p>
+    	</div>
+    	<div class="rangeDiv" id="edu">
+			<p class="now"><span>500元</span></p>
+			<input type="range" min='500' max='3000' step="100" value='0' class="myRange">
+			<p><span class="fr max">3000元</span><span class="min">500元</span></p>
+		</div>
+		<div class="rangeDiv" id="day">
+			<p class="now"><span>7天</span></p>
+			<input type="range" min='7' max='28' step="7" value='0' class="myRange">
+			<p><span class="fr max">30天</span><span class="min">7天</span></p>
+		</div>
+		<div class="borrowUse">
+        	<span>借款用途</span>
+            <p><!--填充select选中的值--></p>
+            <select>
+                <option value="日用品消费" selected="selected">日用品消费</option>
+                <option value="培训学习">培训学习</option>
+                <option value="房屋租赁">房屋租赁</option>
+                <option value="其他">其他</option>
+            </select>
+    	</div>
+    </div>
+    <div class="agreeMent mt20">
+		我已阅读并同意<a href="#" class="blue">《个人信息收集授权协议》</a><input type="checkbox" value="on">
+	</div>
+    <a href="#" class="mySubmit blueBg mt0">立即借款</a>
+</div>
+<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	//select选择下拉框填充值到P
+	$('.borrowUse select').each(function(){
+		$(this).one('click',function(){
+			$(this).siblings('p').html($(this).val());
+		});
+		$(this).on('change',function(){
+			$(this).siblings('p').html($(this).val());
+		});
+	});
+	
+	//计算四项值并输出*********************************
+	//初始化定义四需计算的值
+	var $nhlx = $('.nhlx'), 	//年化利息
+		$qcfwf = $('.qcfwf'),	//期初服务费
+		$dzje = $('.dzje'),		//到账金额
+		$hkje = $('.hkje');		//还款金额
+		$sqed = $('.sqed');		//申请额度
+	function setAmount(edu,day){
+		edu = parseInt(edu);
+		day = parseInt(day);
+		$sqed.html( toDecimal(edu) );
+		$nhlx.html( toDecimal(edu *0.07* day /365) );
+		$qcfwf.html( toDecimal(edu * 0.09) );
+		$dzje.html( toDecimal(edu*(1-0.09)) );
+		$hkje.html( toDecimal(edu+edu *0.07* day /365) );
+	}
+	setAmount(500,7)
+	//计算四项值并输出完成
+	
+	//定义鼠标或手势事件*************************
+	var hasTouch = 'ontouchstart' in window;
+	var goTouchStart = hasTouch ? 'touchstart' : 'mousedown',
+		goTouchEnd = hasTouch ? 'touchend' : 'mouseup';
+	//贷款额度range
+	var $edu = $('#edu'),
+		$eduNow = $edu.find('.now').children('span'),
+		$eduVal = 500,
+		$day = $('#day'),
+		$dayNow = $day.find('.now').children('span'),
+		$dayVal = 7,
+		$eduLeft = $dayLeft = 0;
+	
+	//添加鼠标按上去时字体放大（添加/删除样式）
+	$('#edu input,#day input').on(goTouchStart,function(){
+		$(this).parent('.rangeDiv').addClass('focus');
+	}).on(goTouchEnd,function(){
+		$(this).parent('.rangeDiv').removeClass('focus');
+	})
+	//为额度添加鼠标按上去文件跟随
+	$edu.find('input').on('propertychange input',function(){
+		$eduVal = $(this).val();
+		setAmount($eduVal,$dayVal);
+		$eduLeft = ($eduVal-500)/(3000-50)*100;
+		$eduNow.html($eduVal+'元').css({'left':$eduLeft+'%'});
+		$eduLeft = $eduLeft+$eduLeft/10*1.6;
+		$(this).css('background', 'linear-gradient(to right , #3297fd '+ $eduLeft +'%, #e8e8e8 ' + $eduLeft + '%)');
+	})
+	
+	//为时间添加鼠标按上去文件跟随
+	$day.find('input').on('propertychange input',function(){
+		$dayVal = $(this).val();
+		if($dayVal == 28) $dayVal = 30;
+		setAmount($eduVal,$dayVal);
+		$dayLeft = ($dayVal-7)/(28-2.5)*100;
+		if($dayLeft > 20 && $dayLeft < 50 ) $dayLeft+=1;
+		if($dayLeft > 50 && $dayLeft < 80 ) $dayLeft+=5;
+		$dayNow.html($dayVal+'天').css({'left':$dayLeft+'%'})
+		if($dayLeft > 20 && $dayLeft <= 80) $dayLeft+=4;
+		if($dayLeft > 80 ) $dayLeft+=6;
+		$(this).css('background', 'linear-gradient(to right , #3297fd '+ $dayLeft +'%, #e8e8e8 ' + $dayLeft + '%)');
+	})
+	
+	//取小数点后2位数
+	function toDecimal(x){
+		var f = parseFloat(x); 
+		if (isNaN(f)) { 
+			return false; 
+		} 
+		var f = Math.round(x*100)/100; 
+		var s = f.toString(); 
+		var rs = s.indexOf('.'); 
+		if (rs < 0) { 
+			rs = s.length; 
+			s += '.'; 
+		} 
+		while (s.length <= rs + 2) { 
+			s += '0'; 
+		} 
+		return s;
+	}
+	//取小数点后2位数完成
+	
+	
+	//****20161220新增同意协议
+	//**我已阅读并同意协议开始
+	$('.agreeMent').on('click',function(){
+		var $this = $(this);
+		var $input = $this.children('input');
+		$this.toggleClass('no');
+		$input.val($input.val() == 'on'?'false':'on');
+		//如果未选中的话让下方的按钮也置灰
+		if($input.val() == 'on'){
+			$('.mySubmit').addClass('blueBg').removeClass('grayBg');
+		}else {
+			$('.mySubmit').addClass('grayBg').removeClass('blueBg');
+		}
+	});
+	//让协议的链接禁止冒泡
+	$('.agreeMent .blue').click(function(event){ event.stopPropagation()});
+	
+	
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+//资料填写进度
+.step-progress {
+    background: $white;
+    position: relative;
+    padding: rem(28) rem(24) rem(20);
+    overflow: hidden;
+    ul {
+        width: 112%;
+        margin-left:-6%;
+    }
+    li {
+        float: left;
+        width: 25%;
+        font-size: rem(24);
+        color: #9c9fab;
+        line-height: rem(44);
+        text-align: center;
+        position:relative;
+        &:before {
+            @extend .after;
+            position: absolute;
+            top: rem(41);
+            height: rem(6);
+            background: #ecebf3;
+            width: 50%;
+        }
+        &:before { width: 100%; left:-50%;}
+        &:first-child:before {
+            width: 78%;
+            left: auto;
+            right: 0;
+            border-radius: 6px;
+        }
+        &:last-child:before {
+            width: 128%;
+            border-radius: 6px;
+        }
+    }
+    .step-icon {
+        display: block;
+        width: rem(88);
+        height: rem(88);
+        border-radius:rem(44);
+        margin: 0 auto;
+        background: #ecebf3;
+        position: relative;
+        z-index: 2;
+        &:after {
+            @extend .after;
+            @extend .icon-bg;
+            width: rem(60);
+            height: rem(60);
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            margin: rem(-30) 0 0 rem(-30);
+        }
+    }
+    .step-icon01:after { background-position: 50% 10%;}
+    .step-icon02:after { background-position: 60% 10%;}
+    .step-icon03:after { background-position: 70% 10%;}
+    .step-icon04:after { background-position: 80% 10%;}
+    
+    .step-ok {
+        color: #000;
+        //两端横线进度
+        &:before,&:last-child:after { background:$color;}
+        //图标颜色
+        .step-icon {
+            @extend .gradient;
+        }
+        .step-icon01:after { background-position: 50% 0%;}
+        .step-icon02:after { background-position: 60% 0%;}
+        .step-icon03:after { background-position: 70% 0%;}
+        .step-icon04:after { background-position: 80% 0%;}
+    }
+}

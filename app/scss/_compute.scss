@@ -1,0 +1,454 @@
+@charset "UTF-8";
+.fontArial { font-family: arial;}
+//计算器主体
+.compute-main {
+    background: $white;
+    font-size: rem(32);
+    .text-tips { color: #000; padding-top: rem(25); font-size: rem(32);}
+}
+//滑动块
+.compute-range {
+    padding: rem(10) rem(24) rem(20);
+    line-height: rem(50);
+    color: #9c9fab;
+    @extend .fontArial;
+    border-bottom: 1px solid #e8e8e8;
+    input[type=range] {
+        -webkit-appearance: none;
+        width: 100%;
+        height: rem(12);
+        border-radius:rem(7);
+        background: #ecebf3;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: rem(58);
+        height: rem(58);
+        border-radius: rem(29);
+        border: 0;
+        outline: none;
+        @extend .gradient;
+        box-shadow: 0 0 rem(20) rgba(50,153,256,0.33);
+        position: relative;
+        z-index: 2;
+    }
+    .now {
+        position: relative;
+        font-size: rem(36);
+        height: rem(58);
+        line-height: rem(38);
+        color: #000;
+        span {
+            position:absolute;
+            left:0px;
+            top:0;
+            white-space: nowrap;
+        }
+    }
+    &.focus .now {
+        font-size: rem(40);
+        font-weight: bold;
+    }
+    .max,.min {
+        line-height: rem(52);
+        font-size: rem(28);
+    }
+    .max { float: right;}
+}
+//贷款期限
+.compute-limit {
+    padding: rem(10) 0 rem(30);
+    overflow: hidden;
+    ul {
+        overflow: hidden;
+        width: 96%;
+        margin: 0 auto;
+    }
+    li {
+        width: 25%;
+        float: left;
+        text-align: center;
+        cursor: pointer;
+        span {
+            display:block;
+            width: 90%;
+            margin: 0 auto;
+            line-height:rem(66);
+            color: #000;
+            background-color: #ecebf3;
+            border-radius: rem(10);
+            @extend .fontArial;
+        }
+    }
+    .on span { background: $color; color: $white;}
+}
+//借款信息
+.compute-info {
+    color: #000;
+    .tit {
+        text-align: center;
+        padding: rem(36) 0 0;
+    }
+    .edu {
+        color: $color;
+        font-size: rem(60);
+        font-weight: bold;
+        display: block;
+    }
+    ul {
+        overflow: hidden;
+        padding:rem(12) rem(24);
+    }
+    li {
+        float: left;
+        width: 50%;
+        font-size: rem(28);
+        line-height: rem(48);
+        white-space:nowrap;
+        &:nth-of-type(even) {
+            text-align: right;
+        }
+    }
+    span { color: #9c9fab; @extend .fontArial;}
+}
+
+//还款方式：使用消息
+.compute-tip {
+    padding: 0 3%;
+    line-height: rem(90);
+    border-top: 1px solid #e8e8e8;
+    color: #000;
+    .type { float: right; font-size: rem(28);}
+}
+
+//计算器优势
+.super-list {
+    overflow: hidden;
+    padding: rem(38) 0 rem(15);
+    background: $white;
+    ul {
+        overflow: hidden;
+        width: 98%;
+        margin: 0 auto;
+    }
+    li {
+        position: relative;
+        float: left;
+        width: 25%;
+        text-align: center;
+        font-size: rem(28);
+        color: #6b6d74;
+        line-height: rem(66);
+        &:nth-child(2) span:before { background-position: 60% 20%; }
+        &:nth-child(3) span:before { background-position: 70% 20%; }
+        &:nth-child(4) span:before { background-position: 80% 20%; }
+    }
+    span {
+        margin: 0 auto;
+        width: rem(134);
+        height: rem(134);
+        @extend .icon-bg;
+        color: #fff;
+        background-size: 366.66%;
+        background-position:0 0;
+        overflow:hidden;
+        &:before {
+            @extend .after;
+            @extend .icon-bg;
+            width: rem(60);
+            height: rem(60);
+            position: relative;
+            top:50%;
+            left: 50%;
+            margin: rem(-30) 0 0 rem(-30);
+            background-position: 50% 20%;
+        }
+    }
+}
+
+
+//20170725重做计算器页面
+.compute-box-shadow {
+    box-shadow: 0 0 rem(10) rgba(0,0,0,0.02);
+}
+.compute-box-bg {
+    background: #fff;
+    border-radius: rem(10);
+}
+.compute-overall {
+   padding: rem(20) rem(40) 0;
+   h2 {
+       line-height: rem(108);
+       text-align: center;
+   }
+}
+.compute-overall-edu {
+    height: rem(80);
+    margin-left: -4%;
+    li {
+        float: left;
+        width: 29.3%;
+        margin-left: 4%;
+        display: inline-block;
+        text-align: center;
+        font-size: rem(36);
+        line-height: rem(80);
+        color: #888;
+        cursor: pointer;
+        overflow: hidden;
+        @extend .compute-box-bg;
+        @extend .compute-box-shadow;
+        &:last-child {
+            float: right;
+        }
+        &.on {
+            background: $color;
+            color: #fff;
+            text-indent:rem(-24);
+            &:before {
+                @extend .after;
+                @extend .icon-bg;
+                width: rem(40);
+                height: rem(40);
+                background-position: 50% 40%;
+                float: left;
+                margin:rem(20) 0 0 0;
+                position: relative;
+                left: rem(16);
+            }
+        }
+    }
+}
+.compute-overall-day {
+    @extend .compute-box-bg;
+    height: rem(80);
+    margin-top: rem(20);
+    font-size: rem(30);
+    color: #888;
+    padding-left:rem(16);
+    li {
+       cursor: pointer;
+       position: relative;
+       float: left;
+       line-height: rem(80);;
+       padding:0 rem(65) 0 rem(48);
+       &:before {
+           @extend .after;
+           @extend .icon-bg;
+           position: absolute;
+           width: rem(36);
+           height: rem(36);
+           top: 50%;
+           margin-top: rem(-20);
+           left: 0;
+           background-position: 70% 40%;
+       }
+       &.on{
+           color: #666;
+           &:before {
+               background-position: 60% 40%;
+           }
+       }
+    }
+}
+.compute-overall-info {
+    @extend .compute-box-bg;
+    margin-top: rem(20);
+    overflow: hidden;
+}
+.compute-info-list {
+    overflow: hidden;
+    padding:rem(10) rem(32) 0;
+    li {
+        float: left;
+        width: 49.99%;
+        text-align: center;
+        font-size: rem(26);
+        color: #000;
+        line-height: rem(44);
+        em {
+            display: block;
+            color: #999;
+            font-size: rem(36);
+            font-style: normal;
+                content: "元";
+                font-size: rem(24);
+                padding-left:rem(8);
+
+        }
+        i {
+            display: block;
+            width: rem(68);
+            height: rem(68);
+            margin: rem(50) auto rem(8);
+            border-radius: 100%;
+            border: rem(2) solid $color;
+            &:after {
+                @extend .after;
+                @extend .icon-bg;
+                width:rem(60);
+                height: rem(60);
+                top: 50%;
+                left: 50%;
+                margin: rem(-30) 0 0 rem(-30);
+            }
+        }
+        .icon1:after { background-position: 0 50%; }
+        .icon2:after { background-position: 10% 50%; }
+        .icon3:after { background-position: 20% 50%; }
+        .icon4:after { background-position: 30% 50%; }
+    }
+}
+.compute-info-repay {
+    font-size: rem(28);
+    line-height: rem(90);
+    overflow: hidden;
+    padding: 0 rem(30);
+    margin-top: rem(50);
+    border-top: 1px solid  #fafafa;
+    box-shadow: 0 3px 2px -2px #fafafa inset;
+    em {
+         float: right;
+         font-style: normal;
+         color: #888;
+    }
+}
+
+//20170817重做计算器页面
+.compute-page {
+    background: $white;
+    font-size: rem(32);
+    // margin: rem(25);
+    padding-top: rem(30);
+    padding: rem(30) rem(25);
+    .text-tips { color: #000; padding-top: rem(25); font-size: rem(32);}
+}
+.compute-page-top{
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: rem(60);
+}
+.compute-page-title{
+  text-align: center;
+  color:#999;
+  font-size: rem(24);
+  margin-bottom: rem(40);
+  margin-top: rem(45);
+}
+.compute-page-title:nth-of-type(1){
+  margin-top: rem(16)
+}
+.compute-page-edu {
+    height: rem(80);
+    margin-left: -4%;
+    li {
+        float: left;
+        width: 29.3%;
+        margin-left: 4%;
+        display: inline-block;
+        text-align: center;
+        font-size: rem(36);
+        line-height: rem(80);
+        color: #888;
+        cursor: pointer;
+        overflow: hidden;
+        background-color: #ecebf3;
+        @extend .compute-box-bg;
+        @extend .compute-box-shadow;
+        &:last-child {
+            float: right;
+        }
+        &:after{
+              content: "元";
+        }
+        &.on {
+            background: $color;
+            color: #fff;
+            text-indent:rem(-24);
+            &:before {
+                @extend .after;
+                @extend .icon-bg;
+                width: rem(40);
+                height: rem(40);
+                background-position: 50% 40%;
+                float: left;
+                margin:rem(20) 0 0 0;
+                position: relative;
+                left: rem(16);
+            }
+        }
+    }
+}
+.compute-page-time {
+    height: rem(80);
+    margin-left: -4%;
+    li {
+        float: left;
+        width: 44%;
+        margin-left: 4%;
+        display: inline-block;
+        text-align: center;
+        font-size: rem(36);
+        line-height: rem(80);
+        color: #888;
+        cursor: pointer;
+        overflow: hidden;
+        background-color: #ecebf3;
+        @extend .compute-box-bg;
+        @extend .compute-box-shadow;
+        &:last-child {
+            float: right;
+        }
+        &:after{
+              content: "天";
+              font-size: rem(36);
+              padding-left:rem(8);
+        }
+        &.on {
+            background: $color;
+            color: #fff;
+            text-indent:rem(-24);
+            &:before {
+                @extend .after;
+                @extend .icon-bg;
+                width: rem(40);
+                height: rem(40);
+                background-position: 50% 40%;
+                float: left;
+                margin:rem(20) 0 0 0;
+                position: relative;
+                left: rem(16);
+            }
+        }
+    }
+}
+.compute-page-bottom{
+  ul {
+      overflow: hidden;
+
+      padding:rem(30) rem(24) rem(0) rem(24);
+  }
+  li {
+      float: left;
+      width: 50%;
+      font-size: rem(28);
+      line-height: rem(48);
+      white-space:nowrap;
+      color: #999;
+      &:nth-of-type(even) {
+          // text-align: right;
+          padding-left: rem(20);
+          box-sizing: border-box;
+      }
+      span{
+        color: #999;
+      }
+  }
+}
+.copywriting {
+    position: relative;
+    z-index: 1;
+    display: block;
+    color: #ccc;
+    font-size: rem(28);
+    padding: rem(35) rem(24) rem(18) rem(24);
+}

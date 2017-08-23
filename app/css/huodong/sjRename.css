@@ -1,0 +1,32 @@
+.sjBanner img {
+  display: block;
+  width: 100%; }
+
+.container {
+  background: #266dff;
+  overflow: hidden; }
+
+.sjContent {
+  margin: 0.75rem 0.9375rem 1.4375rem 0.9375rem;
+  padding: 0.375rem 0.75rem 0.5625rem 0.75rem;
+  font-size: 0.75rem;
+  text-align: justify;
+  box-shadow: 0px 3px 5px #154fc5;
+  line-height: 2.1em;
+  background: #fff;
+  border-radius: 0.3125rem;
+  -webkit-border-radius: 0.3125rem;
+  overflow: hidden; }
+  .sjContent .ctit {
+    font-size: 0.875rem;
+    line-height: 2.9em;
+    font-weight: bold;
+    padding-bottom: 0.1875rem; }
+  .sjContent .cbot {
+    float: right;
+    line-height: 1.5em;
+    padding-top: 0.9375rem;
+    text-align: center;
+    width: 9.2em; }
+
+/*# sourceMappingURL=sjRename.css.map */

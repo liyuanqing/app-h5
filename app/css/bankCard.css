@@ -1,0 +1,47 @@
+.container{background-color: #e8eaec;font-family: "微软雅黑";}
+.bold{font-weight: bold;}
+.blue{color: #3297fd;}
+
+.bankIcon{width:80px;width:2.5rem;height:80px;height:2.5rem;margin-left: 20px;margin-left: 0.625rem;float: left;}
+.bankText{width:75.625%;float: right;color: #333;line-height: 40px;line-height: 1.25rem;}
+a.bankBtn,button.bankBtn{background-color: #3297fd;width:93.75%; color: #fff;text-align: center;display: block; font-size:32px; font-size:1rem; line-height:72px; height:2.25rem; line-height:2.25rem; border-radius:0.3125rem; -webkit-border-radius:0.3125rem; margin:20px auto 0; margin:20px auto 0;}
+
+/*银行卡详情 */
+.bankD,.bankA{font-size: 26px;font-size:0.8125rem;}
+.bankD .bk1,.bankA .bk1,.bankM .bk1{padding:20px;padding:0.625rem;background-color: #fff;margin-top: 20px;margin-top: 0.625rem;}
+.bankD .bk1 .bankText .endNum,.bankA .bk1 .bankText .endNum{font-size: 24px;font-size: 0.75rem;}
+.bankD .bk1 .bankText .state,.bankA .bk1 .bankText .state{width:30%;height:100%;float: right;line-height:0;text-align: right;}
+
+.bankD .bk2{color: #666;background-color: #fff;margin-top: 20px;margin-top: 0.625rem;}
+.bankD .bk2 p{text-indent: 20px;text-indent: 0.625rem;line-height: 54px;line-height: 1.6875rem;border-bottom: 1px solid #D0D0D0;}
+.bankD .bk2 .khbank{padding:16px 20px;padding:0.5rem 0.625rem;line-height: 46px;line-height: 1.4375rem;}
+.bankD .bk2 span{float:left;text-align: left;}
+.bankD .bk2 .textL{color: #999;display: block; width:30%;}
+.bankD .bk2 .textR{color: #333;font-weight: bold;display: block;width: 70%;}
+
+.bankD .explain{font-size: 22px;font-size: 0.6875rem;color: #999;line-height: 34px;line-height: 1.0625rem;padding:40px 20px;padding:1.25rem 0.625rem;letter-spacing: -1px;}
+
+
+/*修改银行卡 */
+.bankA .bk2{color: #666;}
+.bankA .bk2 p{text-indent: 20px;text-indent: 0.625rem;line-height:72px;line-height: 2.25rem;}
+.bankA .bk2 .khbank{background-color: #fff;}
+.bankA .bk2 .khbank li{height:76px;height:2.375rem;line-height: 2.375rem;overflow: hidden;border-bottom:1px solid #D0D0D0;position: relative;}
+.bankA .bk2 span,.bankA .bk2 select{float:left;text-align: left; }
+.bankA .bk2 select{ background: url(../img/publicIcon.png) center no-repeat;background-position:-14% 68%;background-size: 198%;}
+.bankA .bk2 .textL{color: #999;display: block; width:30%;text-indent: 20px;text-indent: 0.625rem;}
+.bankA .bk2 .textR{font-family: "微软雅黑";color: #333;font-size: 26px;font-size:0.8125rem;font-weight: bold;display: block;width: 70%;-webkit-appearance:none;padding: 20px 0;padding: 0.625rem 0;border: none;}
+/*.arrow{display:block;width:0.625rem;height:0.9375rem;position:absolute;top:0.625rem;right: 0.625rem;background: url(../img/publicIcon.png) no-repeat;;background-position: 39% -1.5%;background-size: 3000%;}*/
+
+/*2016-04-26修改   */
+button.bankBtn{border: none;font-size:32px;font-size:1rem;font-family: "微软雅黑";}
+.bankBtn.mT0 { margin-top:0;}
+/*银行卡信息 */
+.bankM .bankText{font-size:20px;font-size:0.625rem;color: #999;}
+.bankM .bankText .bankName,.bankM .addBank{font-size: 26px;font-size:0.8125rem;color: #333;}
+.bankM .bankText .endNum{font-size:22px;font-size:0.6875rem;display: inline-block;text-indent: 38px;text-indent: 1.1875rem;}
+.bankM .bankText .state{font-size: 24px;font-size: 0.75rem;width:30%;float: right;text-align: right;display: inline-block;padding-right: 0.625rem;}
+
+.bankM .addBank{display:block;line-height: 76px;line-height: 2.375rem;background-color: #fff;margin-top:20px;margin-top: 0.625rem;padding-left: 20px;padding-left: 0.625rem;position: relative;}
+
+.disNone{display: none;}

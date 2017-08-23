@@ -1,0 +1,15 @@
+@charset "UTF-8";
+//报错消息
+.errorMessage{
+    width:100%;
+    line-height:rem(36);
+    padding:rem(18) 0;
+    position:fixed;
+    top:rem(88);
+    z-index: 9;
+    font-size: rem(28);
+    color:#fff;
+    background-color:rgba(0,0,0,0.9);
+    text-align: center;
+    overflow:hidden;
+}

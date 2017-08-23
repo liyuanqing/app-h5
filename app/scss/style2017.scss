@@ -1,0 +1,39 @@
+@charset "UTF-8";
+@import '_mixin.scss';
+
+//定义通用样式
+@import '_common.scss';
+//top-bar样式
+@import '_top.scss';
+//foot-bar样式
+@import '_foot.scss';
+//表单样式
+@import '_form.scss';
+//列表样式
+@import '_list.scss';
+//弹出层
+@import '_popup.scss';
+//成功或错误提示页面
+@import '_tips.scss';
+//头部报错消息
+@import '_errorMsg.scss';
+//会话-等等转圈
+@import '_dialog.scss';
+
+
+//借款首页
+@import '_loanIndex.scss';
+//计算器页面
+@import '_compute.scss';
+//填写步骤
+@import '_step.scss';
+//上传图片样式
+@import '_uploadImg.scss';
+//X联动选择仿IOS
+@import '_scrollSelect.scss';
+//选择城市列表
+@import '_city.scss';
+
+
+//媒体查询
+@import '_media.scss';

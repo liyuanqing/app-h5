@@ -1,0 +1,19 @@
+.container{padding-bottom: 200px;padding-bottom: 6.25rem;overflow: hidden;}
+.red{color: #ff3333;}
+
+.bk{width:600px;width:18.75rem;padding-top:10px;padding-top:0.3125rem;margin:0 auto;color:#333;line-height: 28px;line-height: 0.875rem;font-size:18px;font-size:0.5625rem;}
+.bk .title{font-weight:bold;font-size: 30px;font-size: 0.9375rem;width:100%;text-align: center;margin:30px 0;margin:0.9375rem 0;}
+.bk p{text-indent: 40px;text-indent: 1.25rem;text-align: justify;}
+.myBold{font-weight: bold;}
+.sure{margin-top:30px ;margin-top: 0.9375rem;}
+.sureTip { height: 2.1875rem; line-height: 2.1875rem; text-align: center; background: #e8eaec; font-size: 0.75rem;}
+.sureTip:before { content: ''; display: inline-block; width: 1rem; height: 1rem; background:url(../img/addIcon0118.png) 0 0 no-repeat; background-size: 600%; position: relative; top: 0.175rem; margin-right: 0.15rem; }
+
+.pageC { text-align:center;}
+.pageC button {font:normal 0.5rem/1rem "microsoft yahei"; color: #333; display: inline-block; padding: 0 5px;}
+.pageC span { font-size:0.5rem; color:#333;}
+#page_count { padding-right: 10px;}
+.canvas { display:block; margin:0 auto; border:1px solid #e8e8e8;}
+.warpCanvas { width:100%; overflow:auto;}
+
+

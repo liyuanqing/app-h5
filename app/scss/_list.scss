@@ -1,0 +1,146 @@
+@charset "UTF-8";
+.shadow40 { box-shadow: 0 0 rem(40) rem(5) rgba(0,126,256,0.1);}
+//列表--填写资料
+.list-main{
+    position: relative;
+    padding-bottom: rem(114);
+    li {
+        font-size:rem(24);
+        line-height: rem(40);
+        text-align: center;
+        height:rem(340);
+        margin: rem(24) rem(24) 0;
+        color:#9c9fab;
+        background:#fff;
+        @extend .shadow40;
+        @extend .radius10;
+    }
+    .tit{
+        padding-top:rem(74);
+        font-size:rem(32);
+        line-height:rem(48);
+        color: #000;
+        display: block;
+    }
+    //整个加a标签
+    a {
+        display: block; height: 100%; color: #aaa;
+        &:after {
+            @extend .icon-bg;
+            @extend .after;
+            width: rem(94);
+            height: rem(94);
+            margin: rem(15) auto 0;
+            background-size: 550%;
+            background-position:22.2% 66.6%;
+        }      
+    }
+    //状态-完成
+    .status-ok {
+        a:after {
+            background-size: 372%;
+            background-position:0 100%;
+        }
+    }
+    //状态-不可填
+    .status-no {
+        background: #d7d6e1;
+        a:after {
+            background-position:0% 66.6%;
+        }
+    }
+    //提示样式覆盖
+    .text-tips { font-size: rem(24); color: #000; padding: rem(16) rem(24);}
+}
+
+//高度小一点的情况
+.list-main-little {
+    li {
+        height: rem(180);
+    }
+    .tit {
+        padding-top:rem(12);
+        line-height: rem(48);
+    }
+    a:after {
+        margin-top: rem(6);
+    }
+}
+
+//列表-通用引导
+.list-item {
+    ul{ @extend .ul-common; }
+    li {
+        @extend .li-common;
+    }
+    a { display: block;}
+//  //通用--如果左侧使用图标的话
+//  .icon-left a:before {
+//      @extend .after;
+//      @extend .icon-bg;
+//      display: inline-block;
+//      width: rem(40);
+//      height: rem(40);
+//      top: rem(9);
+//      background-position:9999em 9999em;
+//      margin-right: rem(12);
+//  } 
+//  //公积金[配合icon-left]
+//  .icon-gjj a:before { background-position:0 40%;}
+//  //社保[配合icon-left]
+//  .icon-sb a:before { background-position:10% 40%;}
+//  //银行储蓄卡[配合icon-left]
+//  .icon-yhk a:before { background-position:20% 40%;}
+//  //工作证明[配合icon-left]
+//  .icon-gzzm a:before { background-position:30% 40%;}
+    
+    //通用右侧使用箭头
+    a:after {
+        @extend .arrow-common;
+        background-position: 40% 20%;
+    }
+    //状态
+    span {
+        color: $gray;
+        float: right;
+        padding-right: rem(64);
+        font-size:rem(28);
+    }
+    
+    //**填写完成**
+    .status-ok {
+        a:after {
+            background-position: 50% 30%;
+            right: rem(24);
+        }
+        span { display: none;}
+    }
+    
+    .text-tips { background:$yellow; color: #54555a;}
+}
+
+//list上面的标题
+.list-tab-title {
+    background: #fff;
+    width: 100%;
+    height: rem(90);
+    line-height: rem(90);
+    border-bottom: 1px solid #e8e8e8;
+    overflow: hidden;
+    ul {
+        position: relative;
+        width: 9999em;
+        overflow: hidden;
+    }
+    li {
+        float:left;
+        overflow: hidden;
+        font-size:rem(30);
+        font-weight: bold;
+        padding: 0 rem(40);
+        position: relative;
+    }
+    .on {
+        box-shadow: 0 rem(-5) 0 0 $color inset;
+    }
+}
